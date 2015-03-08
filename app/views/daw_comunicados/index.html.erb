@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Comunicados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Com nombre</th>
+      <th>Com texto</th>
+      <th>Com tipocomunicado</th>
+      <th>Com estado</th>
+      <th>Com fechaenvio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_comunicados.each do |daw_comunicado| %>
+      <tr>
+        <td><%= daw_comunicado.com_nombre %></td>
+        <td><%= daw_comunicado.com_texto %></td>
+        <td><%= daw_comunicado.com_tipocomunicado %></td>
+        <td><%= daw_comunicado.com_estado %></td>
+        <td><%= daw_comunicado.com_fechaenvio %></td>
+        <td><%= link_to 'Show', daw_comunicado %></td>
+        <td><%= link_to 'Edit', edit_daw_comunicado_path(daw_comunicado) %></td>
+        <td><%= link_to 'Destroy', daw_comunicado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw comunicado', new_daw_comunicado_path %>

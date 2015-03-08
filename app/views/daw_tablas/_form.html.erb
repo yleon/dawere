@@ -1,0 +1,25 @@
+<%= form_for(@daw_tabla) do |f| %>
+  <% if @daw_tabla.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_tabla.errors.count, "error") %> prohibited this daw_tabla from being saved:</h2>
+
+      <ul>
+      <% @daw_tabla.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tab_nombre %><br>
+    <%= f.text_field :tab_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :tab_nemonico %><br>
+    <%= f.text_field :tab_nemonico %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

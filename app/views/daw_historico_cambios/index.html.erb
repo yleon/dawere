@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Historico Cambios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>His cam idtabla</th>
+      <th>His cam idregistro</th>
+      <th>His cam fecha</th>
+      <th>His cam descripcion</th>
+      <th>His cam campo</th>
+      <th>His cam estado</th>
+      <th>His cam login</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_historico_cambios.each do |daw_historico_cambio| %>
+      <tr>
+        <td><%= daw_historico_cambio.his_cam_idtabla %></td>
+        <td><%= daw_historico_cambio.his_cam_idregistro %></td>
+        <td><%= daw_historico_cambio.his_cam_fecha %></td>
+        <td><%= daw_historico_cambio.his_cam_descripcion %></td>
+        <td><%= daw_historico_cambio.his_cam_campo %></td>
+        <td><%= daw_historico_cambio.his_cam_estado %></td>
+        <td><%= daw_historico_cambio.his_cam_login %></td>
+        <td><%= link_to 'Show', daw_historico_cambio %></td>
+        <td><%= link_to 'Edit', edit_daw_historico_cambio_path(daw_historico_cambio) %></td>
+        <td><%= link_to 'Destroy', daw_historico_cambio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw historico cambio', new_daw_historico_cambio_path %>

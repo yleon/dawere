@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cur_son_periodo: 2015-03-07
+  daw_sondeo_id: 
+
+two:
+  cur_son_periodo: 2015-03-07
+  daw_sondeo_id: 

@@ -1,0 +1,2 @@
+module DawLogtransaccionsHelper
+end

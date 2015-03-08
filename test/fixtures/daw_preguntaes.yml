@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pre_encabezado: MyText
+  pre_orden: 1
+  daw_sondeo_id: 
+
+two:
+  pre_encabezado: MyText
+  pre_orden: 1
+  daw_sondeo_id: 

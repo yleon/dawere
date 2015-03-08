@@ -1,0 +1,53 @@
+<%= form_for(@daw_registro) do |f| %>
+  <% if @daw_registro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_registro.errors.count, "error") %> prohibited this daw_registro from being saved:</h2>
+
+      <ul>
+      <% @daw_registro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :reg_idregtab %><br>
+    <%= f.number_field :reg_idregtab %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_descripcion %><br>
+    <%= f.text_area :reg_descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_char %><br>
+    <%= f.text_field :reg_char %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_varchar %><br>
+    <%= f.text_field :reg_varchar %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_float %><br>
+    <%= f.text_field :reg_float %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_boolean %><br>
+    <%= f.check_box :reg_boolean %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_fecha %><br>
+    <%= f.date_select :reg_fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_activo %><br>
+    <%= f.text_field :reg_activo %>
+  </div>
+  <div class="field">
+    <%= f.label :daw_tabla_id %><br>
+    <%= f.text_field :daw_tabla_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

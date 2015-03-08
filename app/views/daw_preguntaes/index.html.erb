@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Preguntaes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre encabezado</th>
+      <th>Pre orden</th>
+      <th>Daw sondeo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_preguntaes.each do |daw_preguntae| %>
+      <tr>
+        <td><%= daw_preguntae.pre_encabezado %></td>
+        <td><%= daw_preguntae.pre_orden %></td>
+        <td><%= daw_preguntae.daw_sondeo %></td>
+        <td><%= link_to 'Show', daw_preguntae %></td>
+        <td><%= link_to 'Edit', edit_daw_preguntae_path(daw_preguntae) %></td>
+        <td><%= link_to 'Destroy', daw_preguntae, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw preguntae', new_daw_preguntae_path %>
