@@ -1,2 +1,0 @@
-module DawCursoSondeosHelper
-end

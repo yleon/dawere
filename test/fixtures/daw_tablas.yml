@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  tab_nombre: MyString
-  tab_nemonico: MyString
-
-two:
-  tab_nombre: MyString
-  tab_nemonico: MyString
