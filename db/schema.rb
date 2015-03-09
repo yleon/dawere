@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308040753) do
+ActiveRecord::Schema.define(version: 20150308041910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accions", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "daw_codigos", force: :cascade do |t|
     t.integer  "cod_valor"
@@ -62,16 +69,16 @@ ActiveRecord::Schema.define(version: 20150308040753) do
 
   add_index "daw_curso_sondeos", ["daw_sondeo_id"], name: "index_daw_curso_sondeos_on_daw_sondeo_id", using: :btree
 
-  create_table "daw_historicocambios", force: :cascade do |t|
-    t.integer  "hiscam_idtabla"
-    t.integer  "hiscam_idregistro"
-    t.date     "hiscam_fecha"
-    t.text     "hiscam_descripcion"
-    t.string   "hiscam_campo"
-    t.string   "hiscam_estado"
-    t.string   "hiscam_login"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+  create_table "daw_historico_cambios", force: :cascade do |t|
+    t.integer  "his_cam_idtabla"
+    t.integer  "his_cam_idregistro"
+    t.date     "his_cam_fecha"
+    t.text     "his_cam_descripcion"
+    t.string   "his_cam_campo"
+    t.string   "his_cam_estado"
+    t.string   "his_cam_login"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "daw_logerrors", force: :cascade do |t|
@@ -167,6 +174,75 @@ ActiveRecord::Schema.define(version: 20150308040753) do
     t.string   "tab_nemonico"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "historico_cambios", force: :cascade do |t|
+    t.integer  "id_tabla"
+    t.integer  "id_reg_tabla"
+    t.string   "campo"
+    t.string   "valor_anterior"
+    t.string   "usuario"
+    t.date     "f_modificacion"
+    t.integer  "registro_id"
+    t.integer  "tabla_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "historico_cambios", ["registro_id"], name: "index_historico_cambios_on_registro_id", using: :btree
+  add_index "historico_cambios", ["tabla_id"], name: "index_historico_cambios_on_tabla_id", using: :btree
+
+  create_table "materia", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "registros", force: :cascade do |t|
+    t.integer  "id_tabla"
+    t.integer  "id_reg_tabla"
+    t.string   "descripcion"
+    t.string   "varchar"
+    t.float    "float"
+    t.boolean  "boolean"
+    t.date     "fecha"
+    t.boolean  "activo"
+    t.integer  "tabla_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "registros", ["tabla_id"], name: "index_registros_on_tabla_id", using: :btree
+
+  create_table "rols", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "tablas", force: :cascade do |t|
+    t.string   "nombre_tabla", limit: 20
+    t.string   "descripcion",  limit: 200
+    t.string   "nemonico",     limit: 5
+    t.boolean  "activo"
+    t.string   "float_tag",    limit: 20
+    t.string   "varchar_tag",  limit: 20
+    t.string   "boolean_tag",  limit: 20
+    t.string   "fecha_tag",    limit: 20
+    t.string   "activo_tag",   limit: 20
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "direccion"
+    t.integer  "edad"
+    t.string   "sexo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "daw_codigos", "daw_promocions"

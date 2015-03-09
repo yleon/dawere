@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DawRegistroTest < ActiveSupport::TestCase
+class DawCursoTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
