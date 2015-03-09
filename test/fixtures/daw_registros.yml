@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reg_idregtab: 1
+  reg_descripcion: MyText
+  reg_char: MyString
+  reg_varchar: MyString
+  reg_float: 1.5
+  reg_boolean: false
+  reg_fecha: 2015-03-09
+  reg_activo: MyString
+  daw_tabla_id: 
+
+two:
+  reg_idregtab: 1
+  reg_descripcion: MyText
+  reg_char: MyString
+  reg_varchar: MyString
+  reg_float: 1.5
+  reg_boolean: false
+  reg_fecha: 2015-03-09
+  reg_activo: MyString
+  daw_tabla_id: 

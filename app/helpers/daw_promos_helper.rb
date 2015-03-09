@@ -1,0 +1,2 @@
+module DawPromosHelper
+end

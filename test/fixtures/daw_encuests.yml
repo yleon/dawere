@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  enc_nombre: MyString
+  enc_descripcion: MyText
+  enc_tipoencuest: MyString
+
+two:
+  enc_nombre: MyString
+  enc_descripcion: MyText
+  enc_tipoencuest: MyString

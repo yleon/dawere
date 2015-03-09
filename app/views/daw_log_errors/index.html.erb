@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Log Errors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Loge sesion</th>
+      <th>Loge descripcion</th>
+      <th>Loge fecha</th>
+      <th>Loge estado</th>
+      <th>Loge error</th>
+      <th>Loge errorbd</th>
+      <th>Loge argumento1</th>
+      <th>Loge argumento2</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_log_errors.each do |daw_log_error| %>
+      <tr>
+        <td><%= daw_log_error.loge_sesion %></td>
+        <td><%= daw_log_error.loge_descripcion %></td>
+        <td><%= daw_log_error.loge_fecha %></td>
+        <td><%= daw_log_error.loge_estado %></td>
+        <td><%= daw_log_error.loge_error %></td>
+        <td><%= daw_log_error.loge_errorbd %></td>
+        <td><%= daw_log_error.loge_argumento1 %></td>
+        <td><%= daw_log_error.loge_argumento2 %></td>
+        <td><%= link_to 'Show', daw_log_error %></td>
+        <td><%= link_to 'Edit', edit_daw_log_error_path(daw_log_error) %></td>
+        <td><%= link_to 'Destroy', daw_log_error, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw log error', new_daw_log_error_path %>

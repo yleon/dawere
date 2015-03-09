@@ -1,0 +1,45 @@
+<%= form_for(@daw_hist_cambio) do |f| %>
+  <% if @daw_hist_cambio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_hist_cambio.errors.count, "error") %> prohibited this daw_hist_cambio from being saved:</h2>
+
+      <ul>
+      <% @daw_hist_cambio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hcam_idtabla %><br>
+    <%= f.number_field :hcam_idtabla %>
+  </div>
+  <div class="field">
+    <%= f.label :hcam_idregistro %><br>
+    <%= f.number_field :hcam_idregistro %>
+  </div>
+  <div class="field">
+    <%= f.label :hcam_fecha %><br>
+    <%= f.date_select :hcam_fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :hcam_descripcion %><br>
+    <%= f.text_area :hcam_descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :hcam_campo %><br>
+    <%= f.text_field :hcam_campo %>
+  </div>
+  <div class="field">
+    <%= f.label :hcam_estado %><br>
+    <%= f.text_field :hcam_estado %>
+  </div>
+  <div class="field">
+    <%= f.label :hcam_login %><br>
+    <%= f.text_field :hcam_login %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

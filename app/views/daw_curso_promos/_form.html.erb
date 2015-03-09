@@ -1,0 +1,21 @@
+<%= form_for(@daw_curso_promo) do |f| %>
+  <% if @daw_curso_promo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_curso_promo.errors.count, "error") %> prohibited this daw_curso_promo from being saved:</h2>
+
+      <ul>
+      <% @daw_curso_promo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :daw_promo_id %><br>
+    <%= f.text_field :daw_promo_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+<%= form_for(@daw_promo) do |f| %>
+  <% if @daw_promo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_promo.errors.count, "error") %> prohibited this daw_promo from being saved:</h2>
+
+      <ul>
+      <% @daw_promo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pro_nombre %><br>
+    <%= f.text_field :pro_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :pro_porcentaje %><br>
+    <%= f.text_field :pro_porcentaje %>
+  </div>
+  <div class="field">
+    <%= f.label :pro_fechaini %><br>
+    <%= f.date_select :pro_fechaini %>
+  </div>
+  <div class="field">
+    <%= f.label :pro_fechafin %><br>
+    <%= f.date_select :pro_fechafin %>
+  </div>
+  <div class="field">
+    <%= f.label :pro_tipopromocion %><br>
+    <%= f.text_field :pro_tipopromocion %>
+  </div>
+  <div class="field">
+    <%= f.label :pro_estado %><br>
+    <%= f.text_field :pro_estado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

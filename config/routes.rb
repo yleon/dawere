@@ -1,4 +1,34 @@
 Rails.application.routes.draw do
+  resources :daw_respuestaes
+
+  resources :daw_preguntaes
+
+  resources :daw_curso_encuests
+
+  resources :daw_curso_comunicados
+
+  resources :daw_comunicados
+
+  resources :daw_encuests
+
+  resources :daw_codigos
+
+  resources :daw_curso_promos
+
+  resources :daw_matricula_promos
+
+  resources :daw_promos
+
+  resources :daw_log_errors
+
+  resources :daw_log_transaccions
+
+  resources :daw_hist_cambios
+
+  resources :daw_registros
+
+  resources :daw_tablas
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

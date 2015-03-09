@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Enc nombre:</strong>
+  <%= @daw_encuest.enc_nombre %>
+</p>
+
+<p>
+  <strong>Enc descripcion:</strong>
+  <%= @daw_encuest.enc_descripcion %>
+</p>
+
+<p>
+  <strong>Enc tipoencuest:</strong>
+  <%= @daw_encuest.enc_tipoencuest %>
+</p>
+
+<%= link_to 'Edit', edit_daw_encuest_path(@daw_encuest) %> |
+<%= link_to 'Back', daw_encuests_path %>

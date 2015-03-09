@@ -1,0 +1,45 @@
+<%= form_for(@daw_log_transaccion) do |f| %>
+  <% if @daw_log_transaccion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_log_transaccion.errors.count, "error") %> prohibited this daw_log_transaccion from being saved:</h2>
+
+      <ul>
+      <% @daw_log_transaccion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :logt_sesion %><br>
+    <%= f.text_area :logt_sesion %>
+  </div>
+  <div class="field">
+    <%= f.label :logt_descripcion %><br>
+    <%= f.text_area :logt_descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :logt_fecha %><br>
+    <%= f.date_select :logt_fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :logt_estado %><br>
+    <%= f.text_field :logt_estado %>
+  </div>
+  <div class="field">
+    <%= f.label :logt_transaccion %><br>
+    <%= f.text_area :logt_transaccion %>
+  </div>
+  <div class="field">
+    <%= f.label :logt_argumento1 %><br>
+    <%= f.text_area :logt_argumento1 %>
+  </div>
+  <div class="field">
+    <%= f.label :logt_argumento2 %><br>
+    <%= f.text_area :logt_argumento2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

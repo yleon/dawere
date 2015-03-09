@@ -1,0 +1,2 @@
+module DawComunicadosHelper
+end

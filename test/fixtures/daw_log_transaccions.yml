@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  logt_sesion: MyText
+  logt_descripcion: MyText
+  logt_fecha: 2015-03-09
+  logt_estado: MyString
+  logt_transaccion: MyText
+  logt_argumento1: MyText
+  logt_argumento2: MyText
+
+two:
+  logt_sesion: MyText
+  logt_descripcion: MyText
+  logt_fecha: 2015-03-09
+  logt_estado: MyString
+  logt_transaccion: MyText
+  logt_argumento1: MyText
+  logt_argumento2: MyText

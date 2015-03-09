@@ -1,0 +1,2 @@
+module DawEncuestsHelper
+end

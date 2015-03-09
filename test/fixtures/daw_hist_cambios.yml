@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hcam_idtabla: 1
+  hcam_idregistro: 1
+  hcam_fecha: 2015-03-09
+  hcam_descripcion: MyText
+  hcam_campo: MyString
+  hcam_estado: MyString
+  hcam_login: MyString
+
+two:
+  hcam_idtabla: 1
+  hcam_idregistro: 1
+  hcam_fecha: 2015-03-09
+  hcam_descripcion: MyText
+  hcam_campo: MyString
+  hcam_estado: MyString
+  hcam_login: MyString

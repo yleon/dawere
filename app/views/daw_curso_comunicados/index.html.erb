@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Curso Comunicados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Curcom fechaenviado</th>
+      <th>Daw comunicado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_curso_comunicados.each do |daw_curso_comunicado| %>
+      <tr>
+        <td><%= daw_curso_comunicado.curcom_fechaenviado %></td>
+        <td><%= daw_curso_comunicado.daw_comunicado %></td>
+        <td><%= link_to 'Show', daw_curso_comunicado %></td>
+        <td><%= link_to 'Edit', edit_daw_curso_comunicado_path(daw_curso_comunicado) %></td>
+        <td><%= link_to 'Destroy', daw_curso_comunicado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw curso comunicado', new_daw_curso_comunicado_path %>

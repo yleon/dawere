@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  res_valor: 1
+  res_fecha: 2015-03-09
+  daw_preguntae_id: 
+
+two:
+  res_valor: 1
+  res_fecha: 2015-03-09
+  daw_preguntae_id: 

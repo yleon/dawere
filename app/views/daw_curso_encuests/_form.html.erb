@@ -1,0 +1,25 @@
+<%= form_for(@daw_curso_encuest) do |f| %>
+  <% if @daw_curso_encuest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_curso_encuest.errors.count, "error") %> prohibited this daw_curso_encuest from being saved:</h2>
+
+      <ul>
+      <% @daw_curso_encuest.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :curenc_periodo %><br>
+    <%= f.date_select :curenc_periodo %>
+  </div>
+  <div class="field">
+    <%= f.label :daw_encuest_id %><br>
+    <%= f.text_field :daw_encuest_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Matricula Promos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Daw promo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_matricula_promos.each do |daw_matricula_promo| %>
+      <tr>
+        <td><%= daw_matricula_promo.daw_promo %></td>
+        <td><%= link_to 'Show', daw_matricula_promo %></td>
+        <td><%= link_to 'Edit', edit_daw_matricula_promo_path(daw_matricula_promo) %></td>
+        <td><%= link_to 'Destroy', daw_matricula_promo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw matricula promo', new_daw_matricula_promo_path %>
