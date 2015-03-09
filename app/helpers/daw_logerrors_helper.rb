@@ -1,0 +1,2 @@
+module DawLogerrorsHelper
+end

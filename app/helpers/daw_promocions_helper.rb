@@ -1,0 +1,2 @@
+module DawPromocionsHelper
+end

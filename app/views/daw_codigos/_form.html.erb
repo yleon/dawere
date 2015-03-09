@@ -1,0 +1,29 @@
+<%= form_for(@daw_codigo) do |f| %>
+  <% if @daw_codigo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_codigo.errors.count, "error") %> prohibited this daw_codigo from being saved:</h2>
+
+      <ul>
+      <% @daw_codigo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cod_valor %><br>
+    <%= f.number_field :cod_valor %>
+  </div>
+  <div class="field">
+    <%= f.label :cod_estado %><br>
+    <%= f.text_field :cod_estado %>
+  </div>
+  <div class="field">
+    <%= f.label :daw_promocion_id %><br>
+    <%= f.text_field :daw_promocion_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

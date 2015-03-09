@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cod valor:</strong>
+  <%= @daw_codigo.cod_valor %>
+</p>
+
+<p>
+  <strong>Cod estado:</strong>
+  <%= @daw_codigo.cod_estado %>
+</p>
+
+<p>
+  <strong>Daw promocion:</strong>
+  <%= @daw_codigo.daw_promocion %>
+</p>
+
+<%= link_to 'Edit', edit_daw_codigo_path(@daw_codigo) %> |
+<%= link_to 'Back', daw_codigos_path %>

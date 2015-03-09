@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Registros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reg idregtab</th>
+      <th>Reg descripcion</th>
+      <th>Reg char</th>
+      <th>Reg varchar</th>
+      <th>Reg float</th>
+      <th>Reg boolean</th>
+      <th>Reg fecha</th>
+      <th>Reg activo</th>
+      <th>Daw tabla</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_registros.each do |daw_registro| %>
+      <tr>
+        <td><%= daw_registro.reg_idregtab %></td>
+        <td><%= daw_registro.reg_descripcion %></td>
+        <td><%= daw_registro.reg_char %></td>
+        <td><%= daw_registro.reg_varchar %></td>
+        <td><%= daw_registro.reg_float %></td>
+        <td><%= daw_registro.reg_boolean %></td>
+        <td><%= daw_registro.reg_fecha %></td>
+        <td><%= daw_registro.reg_activo %></td>
+        <td><%= daw_registro.daw_tabla %></td>
+        <td><%= link_to 'Show', daw_registro %></td>
+        <td><%= link_to 'Edit', edit_daw_registro_path(daw_registro) %></td>
+        <td><%= link_to 'Destroy', daw_registro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw registro', new_daw_registro_path %>

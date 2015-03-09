@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cod_valor: 1
+  cod_estado: MyString
+  daw_promocion_id: 
+
+two:
+  cod_valor: 1
+  cod_estado: MyString
+  daw_promocion_id: 

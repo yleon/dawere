@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  his_cam_idtabla: 1
+  his_cam_idregistro: 1
+  his_cam_fecha: 2015-03-07
+  his_cam_descripcion: MyText
+  his_cam_campo: MyString
+  his_cam_estado: MyString
+  his_cam_login: MyString
+
+two:
+  his_cam_idtabla: 1
+  his_cam_idregistro: 1
+  his_cam_fecha: 2015-03-07
+  his_cam_descripcion: MyText
+  his_cam_campo: MyString
+  his_cam_estado: MyString
+  his_cam_login: MyString

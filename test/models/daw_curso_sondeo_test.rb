@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DawGradoTest < ActiveSupport::TestCase
+class DawCursoSondeoTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

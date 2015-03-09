@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Son nombre:</strong>
+  <%= @daw_sondeo.son_nombre %>
+</p>
+
+<p>
+  <strong>Son descripcion:</strong>
+  <%= @daw_sondeo.son_descripcion %>
+</p>
+
+<p>
+  <strong>Son tipoencuesta:</strong>
+  <%= @daw_sondeo.son_tipoencuesta %>
+</p>
+
+<%= link_to 'Edit', edit_daw_sondeo_path(@daw_sondeo) %> |
+<%= link_to 'Back', daw_sondeos_path %>

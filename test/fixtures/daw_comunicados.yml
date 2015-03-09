@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  com_nombre: MyString
+  com_texto: MyText
+  com_tipocomunicado: MyString
+  com_estado: MyString
+  com_fechaenvio: 2015-03-07
+
+two:
+  com_nombre: MyString
+  com_texto: MyText
+  com_tipocomunicado: MyString
+  com_estado: MyString
+  com_fechaenvio: 2015-03-07

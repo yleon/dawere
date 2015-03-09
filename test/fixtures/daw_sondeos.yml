@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  son_nombre: MyString
+  son_descripcion: MyText
+  son_tipoencuesta: MyString
+
+two:
+  son_nombre: MyString
+  son_descripcion: MyText
+  son_tipoencuesta: MyString
