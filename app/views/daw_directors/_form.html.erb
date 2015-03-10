@@ -1,0 +1,21 @@
+<%= form_for(@daw_director) do |f| %>
+  <% if @daw_director.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_director.errors.count, "error") %> prohibited this daw_director from being saved:</h2>
+
+      <ul>
+      <% @daw_director.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dire_fechaingr %><br>
+    <%= f.date_select :dire_fechaingr %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

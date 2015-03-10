@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  repr_profesion: MyString
+  repr_sostenfamiliar: false
+
+two:
+  repr_profesion: MyString
+  repr_sostenfamiliar: false

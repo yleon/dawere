@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Alianzas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ali tipojuridico</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_alianzas.each do |daw_alianza| %>
+      <tr>
+        <td><%= daw_alianza.ali_tipojuridico %></td>
+        <td><%= link_to 'Show', daw_alianza %></td>
+        <td><%= link_to 'Edit', edit_daw_alianza_path(daw_alianza) %></td>
+        <td><%= link_to 'Destroy', daw_alianza, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw alianza', new_daw_alianza_path %>

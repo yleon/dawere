@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recl_descripcion: MyString
+  recl_fecha: 2015-03-10 13:16:27
+  recl_atendido: false
+  recl_tiporeclamo: 1
+  daw_persona_id: 
+
+two:
+  recl_descripcion: MyString
+  recl_fecha: 2015-03-10 13:16:27
+  recl_atendido: false
+  recl_tiporeclamo: 1
+  daw_persona_id: 

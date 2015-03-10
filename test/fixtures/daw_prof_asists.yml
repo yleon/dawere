@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pa_profesion: MyString
+  pa_tipo: 1
+  pa_fechaingr: 2015-03-10
+  pa_biografia: MyString
+
+two:
+  pa_profesion: MyString
+  pa_tipo: 1
+  pa_fechaingr: 2015-03-10
+  pa_biografia: MyString

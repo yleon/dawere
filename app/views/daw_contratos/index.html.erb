@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Contratos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cont tiempo</th>
+      <th>Cont fechaini</th>
+      <th>Cont fechafin</th>
+      <th>Cont archivo</th>
+      <th>Cont descripcion</th>
+      <th>Daw persona</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_contratos.each do |daw_contrato| %>
+      <tr>
+        <td><%= daw_contrato.cont_tiempo %></td>
+        <td><%= daw_contrato.cont_fechaini %></td>
+        <td><%= daw_contrato.cont_fechafin %></td>
+        <td><%= daw_contrato.cont_archivo %></td>
+        <td><%= daw_contrato.cont_descripcion %></td>
+        <td><%= daw_contrato.daw_persona %></td>
+        <td><%= link_to 'Show', daw_contrato %></td>
+        <td><%= link_to 'Edit', edit_daw_contrato_path(daw_contrato) %></td>
+        <td><%= link_to 'Destroy', daw_contrato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw contrato', new_daw_contrato_path %>

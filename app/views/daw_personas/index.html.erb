@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Personas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pers cedula</th>
+      <th>Pers primernom</th>
+      <th>Pers segundonom</th>
+      <th>Pers primerape</th>
+      <th>Pers segundoape</th>
+      <th>Pers estadocivil</th>
+      <th>Pers fechanac</th>
+      <th>Pers sexo</th>
+      <th>Pers foto</th>
+      <th>Pers email</th>
+      <th>Pers tlf1</th>
+      <th>Pers tlf2</th>
+      <th>Pers tipopers</th>
+      <th>Daw lugar</th>
+      <th>Daw usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_personas.each do |daw_persona| %>
+      <tr>
+        <td><%= daw_persona.pers_cedula %></td>
+        <td><%= daw_persona.pers_primernom %></td>
+        <td><%= daw_persona.pers_segundonom %></td>
+        <td><%= daw_persona.pers_primerape %></td>
+        <td><%= daw_persona.pers_segundoape %></td>
+        <td><%= daw_persona.pers_estadocivil %></td>
+        <td><%= daw_persona.pers_fechanac %></td>
+        <td><%= daw_persona.pers_sexo %></td>
+        <td><%= daw_persona.pers_foto %></td>
+        <td><%= daw_persona.pers_email %></td>
+        <td><%= daw_persona.pers_tlf1 %></td>
+        <td><%= daw_persona.pers_tlf2 %></td>
+        <td><%= daw_persona.pers_tipopers %></td>
+        <td><%= daw_persona.daw_lugar %></td>
+        <td><%= daw_persona.daw_usuario %></td>
+        <td><%= link_to 'Show', daw_persona %></td>
+        <td><%= link_to 'Edit', edit_daw_persona_path(daw_persona) %></td>
+        <td><%= link_to 'Destroy', daw_persona, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw persona', new_daw_persona_path %>

@@ -1,0 +1,33 @@
+<%= form_for(@daw_lugar) do |f| %>
+  <% if @daw_lugar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_lugar.errors.count, "error") %> prohibited this daw_lugar from being saved:</h2>
+
+      <ul>
+      <% @daw_lugar.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lugar_nombre %><br>
+    <%= f.text_field :lugar_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :lugar_tipo %><br>
+    <%= f.text_field :lugar_tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :lugar_nivel %><br>
+    <%= f.number_field :lugar_nivel %>
+  </div>
+  <div class="field">
+    <%= f.label :daw_lugar_id %><br>
+    <%= f.text_field :daw_lugar_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

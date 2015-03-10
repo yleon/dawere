@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lugar_nombre: MyString
+  lugar_tipo: MyString
+  lugar_nivel: 1
+  daw_lugar_id: 
+
+two:
+  lugar_nombre: MyString
+  lugar_tipo: MyString
+  lugar_nivel: 1
+  daw_lugar_id: 

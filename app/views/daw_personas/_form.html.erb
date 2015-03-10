@@ -1,0 +1,77 @@
+<%= form_for(@daw_persona) do |f| %>
+  <% if @daw_persona.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_persona.errors.count, "error") %> prohibited this daw_persona from being saved:</h2>
+
+      <ul>
+      <% @daw_persona.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pers_cedula %><br>
+    <%= f.text_field :pers_cedula %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_primernom %><br>
+    <%= f.text_field :pers_primernom %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_segundonom %><br>
+    <%= f.text_field :pers_segundonom %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_primerape %><br>
+    <%= f.text_field :pers_primerape %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_segundoape %><br>
+    <%= f.text_field :pers_segundoape %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_estadocivil %><br>
+    <%= f.text_field :pers_estadocivil %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_fechanac %><br>
+    <%= f.date_select :pers_fechanac %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_sexo %><br>
+    <%= f.text_field :pers_sexo %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_foto %><br>
+    <%= f.text_field :pers_foto %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_email %><br>
+    <%= f.text_field :pers_email %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_tlf1 %><br>
+    <%= f.text_field :pers_tlf1 %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_tlf2 %><br>
+    <%= f.text_field :pers_tlf2 %>
+  </div>
+  <div class="field">
+    <%= f.label :pers_tipopers %><br>
+    <%= f.number_field :pers_tipopers %>
+  </div>
+  <div class="field">
+    <%= f.label :daw_lugar_id %><br>
+    <%= f.text_field :daw_lugar_id %>
+  </div>
+  <div class="field">
+    <%= f.label :daw_usuario_id %><br>
+    <%= f.text_field :daw_usuario_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

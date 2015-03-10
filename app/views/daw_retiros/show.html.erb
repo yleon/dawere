@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ret fecha:</strong>
+  <%= @daw_retiro.ret_fecha %>
+</p>
+
+<p>
+  <strong>Ret motivo:</strong>
+  <%= @daw_retiro.ret_motivo %>
+</p>
+
+<p>
+  <strong>Daw persona:</strong>
+  <%= @daw_retiro.daw_persona %>
+</p>
+
+<%= link_to 'Edit', edit_daw_retiro_path(@daw_retiro) %> |
+<%= link_to 'Back', daw_retiros_path %>

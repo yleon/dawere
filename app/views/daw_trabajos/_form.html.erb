@@ -1,0 +1,45 @@
+<%= form_for(@daw_trabajo) do |f| %>
+  <% if @daw_trabajo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_trabajo.errors.count, "error") %> prohibited this daw_trabajo from being saved:</h2>
+
+      <ul>
+      <% @daw_trabajo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :trab_nombre %><br>
+    <%= f.text_field :trab_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :trab_tipo %><br>
+    <%= f.text_field :trab_tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :trab_telefono %><br>
+    <%= f.text_field :trab_telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :trab_direccion %><br>
+    <%= f.text_field :trab_direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :trab_fecha %><br>
+    <%= f.date_select :trab_fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :trab_estado %><br>
+    <%= f.text_field :trab_estado %>
+  </div>
+  <div class="field">
+    <%= f.label :daw_persona_id %><br>
+    <%= f.text_field :daw_persona_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

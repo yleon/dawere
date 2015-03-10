@@ -1,0 +1,21 @@
+<%= form_for(@daw_alianza) do |f| %>
+  <% if @daw_alianza.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_alianza.errors.count, "error") %> prohibited this daw_alianza from being saved:</h2>
+
+      <ul>
+      <% @daw_alianza.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ali_tipojuridico %><br>
+    <%= f.number_field :ali_tipojuridico %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

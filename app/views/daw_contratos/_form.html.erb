@@ -1,0 +1,41 @@
+<%= form_for(@daw_contrato) do |f| %>
+  <% if @daw_contrato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_contrato.errors.count, "error") %> prohibited this daw_contrato from being saved:</h2>
+
+      <ul>
+      <% @daw_contrato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cont_tiempo %><br>
+    <%= f.number_field :cont_tiempo %>
+  </div>
+  <div class="field">
+    <%= f.label :cont_fechaini %><br>
+    <%= f.date_select :cont_fechaini %>
+  </div>
+  <div class="field">
+    <%= f.label :cont_fechafin %><br>
+    <%= f.date_select :cont_fechafin %>
+  </div>
+  <div class="field">
+    <%= f.label :cont_archivo %><br>
+    <%= f.text_field :cont_archivo %>
+  </div>
+  <div class="field">
+    <%= f.label :cont_descripcion %><br>
+    <%= f.text_field :cont_descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :daw_persona_id %><br>
+    <%= f.text_field :daw_persona_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

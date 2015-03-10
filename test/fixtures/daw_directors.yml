@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dire_fechaingr: 2015-03-10
+
+two:
+  dire_fechaingr: 2015-03-10

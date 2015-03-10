@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Directors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dire fechaingr</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_directors.each do |daw_director| %>
+      <tr>
+        <td><%= daw_director.dire_fechaingr %></td>
+        <td><%= link_to 'Show', daw_director %></td>
+        <td><%= link_to 'Edit', edit_daw_director_path(daw_director) %></td>
+        <td><%= link_to 'Destroy', daw_director, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw director', new_daw_director_path %>

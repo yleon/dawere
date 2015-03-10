@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recl descripcion:</strong>
+  <%= @daw_reclamo.recl_descripcion %>
+</p>
+
+<p>
+  <strong>Recl fecha:</strong>
+  <%= @daw_reclamo.recl_fecha %>
+</p>
+
+<p>
+  <strong>Recl atendido:</strong>
+  <%= @daw_reclamo.recl_atendido %>
+</p>
+
+<p>
+  <strong>Recl tiporeclamo:</strong>
+  <%= @daw_reclamo.recl_tiporeclamo %>
+</p>
+
+<p>
+  <strong>Daw persona:</strong>
+  <%= @daw_reclamo.daw_persona %>
+</p>
+
+<%= link_to 'Edit', edit_daw_reclamo_path(@daw_reclamo) %> |
+<%= link_to 'Back', daw_reclamos_path %>

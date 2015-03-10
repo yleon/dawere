@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rela_tiporepresentante: 1
+  daw_persona_id: 
+  daw_persona_id: 
+
+two:
+  rela_tiporepresentante: 1
+  daw_persona_id: 
+  daw_persona_id: 

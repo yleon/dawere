@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Lugars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lugar nombre</th>
+      <th>Lugar tipo</th>
+      <th>Lugar nivel</th>
+      <th>Daw lugar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_lugars.each do |daw_lugar| %>
+      <tr>
+        <td><%= daw_lugar.lugar_nombre %></td>
+        <td><%= daw_lugar.lugar_tipo %></td>
+        <td><%= daw_lugar.lugar_nivel %></td>
+        <td><%= daw_lugar.daw_lugar %></td>
+        <td><%= link_to 'Show', daw_lugar %></td>
+        <td><%= link_to 'Edit', edit_daw_lugar_path(daw_lugar) %></td>
+        <td><%= link_to 'Destroy', daw_lugar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw lugar', new_daw_lugar_path %>

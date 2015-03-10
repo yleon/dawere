@@ -1,0 +1,29 @@
+<%= form_for(@daw_retiro) do |f| %>
+  <% if @daw_retiro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_retiro.errors.count, "error") %> prohibited this daw_retiro from being saved:</h2>
+
+      <ul>
+      <% @daw_retiro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ret_fecha %><br>
+    <%= f.date_select :ret_fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :ret_motivo %><br>
+    <%= f.text_field :ret_motivo %>
+  </div>
+  <div class="field">
+    <%= f.label :daw_persona_id %><br>
+    <%= f.text_field :daw_persona_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<%= form_for(@daw_prof_asist) do |f| %>
+  <% if @daw_prof_asist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_prof_asist.errors.count, "error") %> prohibited this daw_prof_asist from being saved:</h2>
+
+      <ul>
+      <% @daw_prof_asist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pa_profesion %><br>
+    <%= f.text_field :pa_profesion %>
+  </div>
+  <div class="field">
+    <%= f.label :pa_tipo %><br>
+    <%= f.number_field :pa_tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :pa_fechaingr %><br>
+    <%= f.date_select :pa_fechaingr %>
+  </div>
+  <div class="field">
+    <%= f.label :pa_biografia %><br>
+    <%= f.text_field :pa_biografia %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

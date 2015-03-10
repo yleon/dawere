@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cont_tiempo: 1
+  cont_fechaini: 2015-03-10
+  cont_fechafin: 2015-03-10
+  cont_archivo: MyString
+  cont_descripcion: MyString
+  daw_persona_id: 
+
+two:
+  cont_tiempo: 1
+  cont_fechaini: 2015-03-10
+  cont_fechafin: 2015-03-10
+  cont_archivo: MyString
+  cont_descripcion: MyString
+  daw_persona_id: 

@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
-
+#gema Devise para la gestion de usuarios https://github.com/plataformatec/devise
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310143326) do
+ActiveRecord::Schema.define(version: 20150310174841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 20150310143326) do
     t.time     "act_duracion"
     t.string   "act_estado"
     t.integer  "act_cantidadpreg"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "daw_alianzas", force: :cascade do |t|
+    t.integer  "ali_tipojuridico"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -101,6 +107,19 @@ ActiveRecord::Schema.define(version: 20150310143326) do
     t.datetime "updated_at",         null: false
   end
 
+  create_table "daw_contratos", force: :cascade do |t|
+    t.integer  "cont_tiempo"
+    t.date     "cont_fechaini"
+    t.date     "cont_fechafin"
+    t.string   "cont_archivo"
+    t.string   "cont_descripcion"
+    t.integer  "daw_persona_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "daw_contratos", ["daw_persona_id"], name: "index_daw_contratos_on_daw_persona_id", using: :btree
+
   create_table "daw_curso_comunicados", force: :cascade do |t|
     t.date     "curcom_fechaenviado"
     t.integer  "daw_comunicado_id"
@@ -176,12 +195,25 @@ ActiveRecord::Schema.define(version: 20150310143326) do
   add_index "daw_cursos", ["daw_grado_id"], name: "index_daw_cursos_on_daw_grado_id", using: :btree
   add_index "daw_cursos", ["daw_periodo_acad_id"], name: "index_daw_cursos_on_daw_periodo_acad_id", using: :btree
 
+  create_table "daw_directors", force: :cascade do |t|
+    t.date     "dire_fechaingr"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "daw_encuests", force: :cascade do |t|
     t.string   "enc_nombre"
     t.text     "enc_descripcion"
     t.string   "enc_tipoencuest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "daw_estudiantes", force: :cascade do |t|
+    t.string   "estu_nacionalidad"
+    t.string   "estu_biografia"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "daw_evaluacions", force: :cascade do |t|
@@ -259,6 +291,17 @@ ActiveRecord::Schema.define(version: 20150310143326) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "daw_lugars", force: :cascade do |t|
+    t.string   "lugar_nombre"
+    t.string   "lugar_tipo"
+    t.integer  "lugar_nivel"
+    t.integer  "daw_lugar_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "daw_lugars", ["daw_lugar_id"], name: "index_daw_lugars_on_daw_lugar_id", using: :btree
+
   create_table "daw_mate_acads", force: :cascade do |t|
     t.string   "mac_nombre"
     t.text     "mac_descrip"
@@ -312,6 +355,29 @@ ActiveRecord::Schema.define(version: 20150310143326) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "daw_personas", force: :cascade do |t|
+    t.string   "pers_cedula"
+    t.string   "pers_primernom"
+    t.string   "pers_segundonom"
+    t.string   "pers_primerape"
+    t.string   "pers_segundoape"
+    t.string   "pers_estadocivil"
+    t.date     "pers_fechanac"
+    t.string   "pers_sexo"
+    t.string   "pers_foto"
+    t.string   "pers_email"
+    t.string   "pers_tlf1"
+    t.string   "pers_tlf2"
+    t.integer  "pers_tipopers"
+    t.integer  "daw_lugar_id"
+    t.integer  "daw_usuario_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "daw_personas", ["daw_lugar_id"], name: "index_daw_personas_on_daw_lugar_id", using: :btree
+  add_index "daw_personas", ["daw_usuario_id"], name: "index_daw_personas_on_daw_usuario_id", using: :btree
+
   create_table "daw_preguntaes", force: :cascade do |t|
     t.text     "pre_encabezado"
     t.integer  "pre_orden"
@@ -334,6 +400,15 @@ ActiveRecord::Schema.define(version: 20150310143326) do
 
   add_index "daw_pregunts", ["daw_actividad_id"], name: "index_daw_pregunts_on_daw_actividad_id", using: :btree
 
+  create_table "daw_prof_asists", force: :cascade do |t|
+    t.string   "pa_profesion"
+    t.integer  "pa_tipo"
+    t.date     "pa_fechaingr"
+    t.string   "pa_biografia"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "daw_promos", force: :cascade do |t|
     t.string   "promo_nombre"
     t.float    "promo_porcentaje"
@@ -344,6 +419,18 @@ ActiveRecord::Schema.define(version: 20150310143326) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
+
+  create_table "daw_reclamos", force: :cascade do |t|
+    t.string   "recl_descripcion"
+    t.time     "recl_fecha"
+    t.boolean  "recl_atendido"
+    t.integer  "recl_tiporeclamo"
+    t.integer  "daw_persona_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "daw_reclamos", ["daw_persona_id"], name: "index_daw_reclamos_on_daw_persona_id", using: :btree
 
   create_table "daw_registros", force: :cascade do |t|
     t.integer  "reg_idregtab"
@@ -360,6 +447,22 @@ ActiveRecord::Schema.define(version: 20150310143326) do
   end
 
   add_index "daw_registros", ["daw_tabla_id"], name: "index_daw_registros_on_daw_tabla_id", using: :btree
+
+  create_table "daw_relacions", force: :cascade do |t|
+    t.integer  "rela_tiporepresentante"
+    t.integer  "daw_persona_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "daw_relacions", ["daw_persona_id"], name: "index_daw_relacions_on_daw_persona_id", using: :btree
+
+  create_table "daw_representantes", force: :cascade do |t|
+    t.string   "repr_profesion"
+    t.boolean  "repr_sostenfamiliar"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "daw_respuestaes", force: :cascade do |t|
     t.integer  "res_valor"
@@ -382,6 +485,33 @@ ActiveRecord::Schema.define(version: 20150310143326) do
 
   add_index "daw_respuests", ["daw_calificacion_id"], name: "index_daw_respuests_on_daw_calificacion_id", using: :btree
   add_index "daw_respuests", ["daw_opcion_id"], name: "index_daw_respuests_on_daw_opcion_id", using: :btree
+
+  create_table "daw_retiros", force: :cascade do |t|
+    t.date     "ret_fecha"
+    t.string   "ret_motivo"
+    t.integer  "daw_persona_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "daw_retiros", ["daw_persona_id"], name: "index_daw_retiros_on_daw_persona_id", using: :btree
+
+  create_table "daw_rol_pers_inscs", force: :cascade do |t|
+    t.string   "rpi_tiporol"
+    t.integer  "daw_persona_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "daw_rol_pers_inscs", ["daw_persona_id"], name: "index_daw_rol_pers_inscs_on_daw_persona_id", using: :btree
+
+  create_table "daw_staffs", force: :cascade do |t|
+    t.date     "staff_fechaingr"
+    t.date     "staff_fechasalida"
+    t.string   "staff_estado"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "daw_tablas", force: :cascade do |t|
     t.string   "tab_nombre"
@@ -408,6 +538,38 @@ ActiveRecord::Schema.define(version: 20150310143326) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "daw_trabajos", force: :cascade do |t|
+    t.string   "trab_nombre"
+    t.string   "trab_tipo"
+    t.string   "trab_telefono"
+    t.string   "trab_direccion"
+    t.date     "trab_fecha"
+    t.string   "trab_estado"
+    t.integer  "daw_persona_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "daw_trabajos", ["daw_persona_id"], name: "index_daw_trabajos_on_daw_persona_id", using: :btree
+
+  create_table "daw_usuarios", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "daw_usuarios", ["email"], name: "index_daw_usuarios_on_email", unique: true, using: :btree
+  add_index "daw_usuarios", ["reset_password_token"], name: "index_daw_usuarios_on_reset_password_token", unique: true, using: :btree
+
   add_foreign_key "daw_asistirs", "daw_inscripcions"
   add_foreign_key "daw_asistirs", "daw_tema_mate_acads"
   add_foreign_key "daw_boletins", "daw_cursos"
@@ -416,6 +578,7 @@ ActiveRecord::Schema.define(version: 20150310143326) do
   add_foreign_key "daw_calificacions", "daw_inscripcions"
   add_foreign_key "daw_codigos", "daw_inscripcions"
   add_foreign_key "daw_codigos", "daw_promos"
+  add_foreign_key "daw_contratos", "daw_personas"
   add_foreign_key "daw_curso_comunicados", "daw_comunicados"
   add_foreign_key "daw_curso_comunicados", "daw_cursos"
   add_foreign_key "daw_curso_comunicados", "daw_cursos"
@@ -433,15 +596,24 @@ ActiveRecord::Schema.define(version: 20150310143326) do
   add_foreign_key "daw_evaluacions", "daw_curso_temas"
   add_foreign_key "daw_inscripcions", "daw_cursos"
   add_foreign_key "daw_inscripcions", "daw_matriculas"
+  add_foreign_key "daw_lugars", "daw_lugars"
   add_foreign_key "daw_matricula_promos", "daw_matriculas"
   add_foreign_key "daw_matricula_promos", "daw_promos"
   add_foreign_key "daw_opcions", "daw_pregunts"
+  add_foreign_key "daw_personas", "daw_lugars"
+  add_foreign_key "daw_personas", "daw_usuarios"
   add_foreign_key "daw_preguntaes", "daw_encuests"
   add_foreign_key "daw_pregunts", "daw_actividads"
+  add_foreign_key "daw_reclamos", "daw_personas"
   add_foreign_key "daw_registros", "daw_tablas"
+  add_foreign_key "daw_relacions", "daw_personas"
+  add_foreign_key "daw_relacions", "daw_personas"
   add_foreign_key "daw_respuestaes", "daw_preguntaes"
   add_foreign_key "daw_respuests", "daw_calificacions"
   add_foreign_key "daw_respuests", "daw_opcions"
+  add_foreign_key "daw_retiros", "daw_personas"
+  add_foreign_key "daw_rol_pers_inscs", "daw_personas"
   add_foreign_key "daw_tema_mate_acads", "daw_mate_acads"
   add_foreign_key "daw_tema_mate_acads", "daw_temas"
+  add_foreign_key "daw_trabajos", "daw_personas"
 end

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Retiros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ret fecha</th>
+      <th>Ret motivo</th>
+      <th>Daw persona</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_retiros.each do |daw_retiro| %>
+      <tr>
+        <td><%= daw_retiro.ret_fecha %></td>
+        <td><%= daw_retiro.ret_motivo %></td>
+        <td><%= daw_retiro.daw_persona %></td>
+        <td><%= link_to 'Show', daw_retiro %></td>
+        <td><%= link_to 'Edit', edit_daw_retiro_path(daw_retiro) %></td>
+        <td><%= link_to 'Destroy', daw_retiro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw retiro', new_daw_retiro_path %>

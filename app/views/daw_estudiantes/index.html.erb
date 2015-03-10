@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Estudiantes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estu nacionalidad</th>
+      <th>Estu biografia</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_estudiantes.each do |daw_estudiante| %>
+      <tr>
+        <td><%= daw_estudiante.estu_nacionalidad %></td>
+        <td><%= daw_estudiante.estu_biografia %></td>
+        <td><%= link_to 'Show', daw_estudiante %></td>
+        <td><%= link_to 'Edit', edit_daw_estudiante_path(daw_estudiante) %></td>
+        <td><%= link_to 'Destroy', daw_estudiante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw estudiante', new_daw_estudiante_path %>

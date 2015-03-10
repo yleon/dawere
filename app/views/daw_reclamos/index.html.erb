@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Reclamos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recl descripcion</th>
+      <th>Recl fecha</th>
+      <th>Recl atendido</th>
+      <th>Recl tiporeclamo</th>
+      <th>Daw persona</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_reclamos.each do |daw_reclamo| %>
+      <tr>
+        <td><%= daw_reclamo.recl_descripcion %></td>
+        <td><%= daw_reclamo.recl_fecha %></td>
+        <td><%= daw_reclamo.recl_atendido %></td>
+        <td><%= daw_reclamo.recl_tiporeclamo %></td>
+        <td><%= daw_reclamo.daw_persona %></td>
+        <td><%= link_to 'Show', daw_reclamo %></td>
+        <td><%= link_to 'Edit', edit_daw_reclamo_path(daw_reclamo) %></td>
+        <td><%= link_to 'Destroy', daw_reclamo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw reclamo', new_daw_reclamo_path %>

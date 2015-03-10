@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Relacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rela tiporepresentante</th>
+      <th>Daw persona</th>
+      <th>Daw persona</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_relacions.each do |daw_relacion| %>
+      <tr>
+        <td><%= daw_relacion.rela_tiporepresentante %></td>
+        <td><%= daw_relacion.daw_persona %></td>
+        <td><%= daw_relacion.daw_persona %></td>
+        <td><%= link_to 'Show', daw_relacion %></td>
+        <td><%= link_to 'Edit', edit_daw_relacion_path(daw_relacion) %></td>
+        <td><%= link_to 'Destroy', daw_relacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw relacion', new_daw_relacion_path %>

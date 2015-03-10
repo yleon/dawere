@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trab_nombre: MyString
+  trab_tipo: MyString
+  trab_telefono: MyString
+  trab_direccion: MyString
+  trab_fecha: 2015-03-10
+  trab_estado: MyString
+  daw_persona_id: 
+
+two:
+  trab_nombre: MyString
+  trab_tipo: MyString
+  trab_telefono: MyString
+  trab_direccion: MyString
+  trab_fecha: 2015-03-10
+  trab_estado: MyString
+  daw_persona_id: 

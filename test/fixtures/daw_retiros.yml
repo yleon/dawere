@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ret_fecha: 2015-03-10
+  ret_motivo: MyString
+  daw_persona_id: 
+
+two:
+  ret_fecha: 2015-03-10
+  ret_motivo: MyString
+  daw_persona_id: 

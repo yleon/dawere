@@ -1,0 +1,25 @@
+<%= form_for(@daw_rol_pers_insc) do |f| %>
+  <% if @daw_rol_pers_insc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_rol_pers_insc.errors.count, "error") %> prohibited this daw_rol_pers_insc from being saved:</h2>
+
+      <ul>
+      <% @daw_rol_pers_insc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rpi_tiporol %><br>
+    <%= f.text_field :rpi_tiporol %>
+  </div>
+  <div class="field">
+    <%= f.label :daw_persona_id %><br>
+    <%= f.text_field :daw_persona_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

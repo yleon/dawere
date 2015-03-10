@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Staffs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Staff fechaingr</th>
+      <th>Staff fechasalida</th>
+      <th>Staff estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_staffs.each do |daw_staff| %>
+      <tr>
+        <td><%= daw_staff.staff_fechaingr %></td>
+        <td><%= daw_staff.staff_fechasalida %></td>
+        <td><%= daw_staff.staff_estado %></td>
+        <td><%= link_to 'Show', daw_staff %></td>
+        <td><%= link_to 'Edit', edit_daw_staff_path(daw_staff) %></td>
+        <td><%= link_to 'Destroy', daw_staff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw staff', new_daw_staff_path %>

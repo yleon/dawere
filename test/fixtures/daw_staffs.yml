@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  staff_fechaingr: 2015-03-10
+  staff_fechasalida: 2015-03-10
+  staff_estado: MyString
+
+two:
+  staff_fechaingr: 2015-03-10
+  staff_fechasalida: 2015-03-10
+  staff_estado: MyString

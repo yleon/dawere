@@ -1,4 +1,33 @@
 Rails.application.routes.draw do
+  resources :daw_rol_pers_inscs
+
+  resources :daw_retiros
+
+  resources :daw_contratos
+
+  resources :daw_relacions
+
+  resources :daw_trabajos
+
+  resources :daw_reclamos
+
+  devise_for :daw_usuarios
+  resources :daw_alianzas
+
+  resources :daw_staffs
+
+  resources :daw_directors
+
+  resources :daw_prof_asists
+
+  resources :daw_representantes
+
+  resources :daw_estudiantes
+
+  resources :daw_personas
+
+  resources :daw_lugars
+
   resources :daw_asistirs
 
   resources :daw_boletins

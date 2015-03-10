@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Prof Asists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pa profesion</th>
+      <th>Pa tipo</th>
+      <th>Pa fechaingr</th>
+      <th>Pa biografia</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_prof_asists.each do |daw_prof_asist| %>
+      <tr>
+        <td><%= daw_prof_asist.pa_profesion %></td>
+        <td><%= daw_prof_asist.pa_tipo %></td>
+        <td><%= daw_prof_asist.pa_fechaingr %></td>
+        <td><%= daw_prof_asist.pa_biografia %></td>
+        <td><%= link_to 'Show', daw_prof_asist %></td>
+        <td><%= link_to 'Edit', edit_daw_prof_asist_path(daw_prof_asist) %></td>
+        <td><%= link_to 'Destroy', daw_prof_asist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw prof asist', new_daw_prof_asist_path %>
