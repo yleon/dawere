@@ -1,0 +1,41 @@
+<%= form_for(@daw_inscripcion) do |f| %>
+  <% if @daw_inscripcion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_inscripcion.errors.count, "error") %> prohibited this daw_inscripcion from being saved:</h2>
+
+      <ul>
+      <% @daw_inscripcion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :insc_fechaini %><br>
+    <%= f.date_select :insc_fechaini %>
+  </div>
+  <div class="field">
+    <%= f.label :insc_fechafin %><br>
+    <%= f.date_select :insc_fechafin %>
+  </div>
+  <div class="field">
+    <%= f.label :insc_estado %><br>
+    <%= f.check_box :insc_estado %>
+  </div>
+  <div class="field">
+    <%= f.label :insc_tipo %><br>
+    <%= f.number_field :insc_tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :insc_estadoPago %><br>
+    <%= f.text_field :insc_estadoPago %>
+  </div>
+  <div class="field">
+    <%= f.label :insc_estadoDoc %><br>
+    <%= f.text_field :insc_estadoDoc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

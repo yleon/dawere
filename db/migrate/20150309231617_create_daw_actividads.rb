@@ -5,8 +5,8 @@ class CreateDawActividads < ActiveRecord::Migration
       t.text :act_descripcion
       t.boolean :act_disponible
       t.time :act_duracion
-      t.boolean :act_estado
-      t.integer :act_cantidadPreg
+      t.string :act_estado
+      t.integer :act_cantidadpreg
 
       t.timestamps null: false
     end

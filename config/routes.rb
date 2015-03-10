@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  resources :daw_asistirs
+
+  resources :daw_boletins
+
+  resources :daw_asistencia
+
+  resources :daw_inscripcions
+
+  resources :daw_calificacions
+
+  resources :daw_respuests
+
   resources :daw_opcions
 
   resources :daw_archivos

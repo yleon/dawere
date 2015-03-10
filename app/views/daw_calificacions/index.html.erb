@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Calificacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Calif notaobtenida</th>
+      <th>Calif presento</th>
+      <th>Calif fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_calificacions.each do |daw_calificacion| %>
+      <tr>
+        <td><%= daw_calificacion.calif_notaObtenida %></td>
+        <td><%= daw_calificacion.calif_presento %></td>
+        <td><%= daw_calificacion.calif_fecha %></td>
+        <td><%= link_to 'Show', daw_calificacion %></td>
+        <td><%= link_to 'Edit', edit_daw_calificacion_path(daw_calificacion) %></td>
+        <td><%= link_to 'Destroy', daw_calificacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw calificacion', new_daw_calificacion_path %>

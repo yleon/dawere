@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asist_fecha: 2015-03-10
+
+two:
+  asist_fecha: 2015-03-10

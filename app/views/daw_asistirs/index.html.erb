@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Asistirs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Asist fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_asistirs.each do |daw_asistir| %>
+      <tr>
+        <td><%= daw_asistir.asist_fecha %></td>
+        <td><%= link_to 'Show', daw_asistir %></td>
+        <td><%= link_to 'Edit', edit_daw_asistir_path(daw_asistir) %></td>
+        <td><%= link_to 'Destroy', daw_asistir, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw asistir', new_daw_asistir_path %>

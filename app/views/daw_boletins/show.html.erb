@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bltin nota:</strong>
+  <%= @daw_boletin.bltin_nota %>
+</p>
+
+<p>
+  <strong>Bltin progresoasist:</strong>
+  <%= @daw_boletin.bltin_progresoAsist %>
+</p>
+
+<p>
+  <strong>Bltin progresoeval:</strong>
+  <%= @daw_boletin.bltin_progresoEval %>
+</p>
+
+<p>
+  <strong>Bltin porcentaje:</strong>
+  <%= @daw_boletin.bltin_porcentaje %>
+</p>
+
+<p>
+  <strong>Bltin fechafin:</strong>
+  <%= @daw_boletin.bltin_fechafin %>
+</p>
+
+<%= link_to 'Edit', edit_daw_boletin_path(@daw_boletin) %> |
+<%= link_to 'Back', daw_boletins_path %>

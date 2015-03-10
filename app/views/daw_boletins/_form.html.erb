@@ -1,0 +1,37 @@
+<%= form_for(@daw_boletin) do |f| %>
+  <% if @daw_boletin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_boletin.errors.count, "error") %> prohibited this daw_boletin from being saved:</h2>
+
+      <ul>
+      <% @daw_boletin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bltin_nota %><br>
+    <%= f.number_field :bltin_nota %>
+  </div>
+  <div class="field">
+    <%= f.label :bltin_progresoAsist %><br>
+    <%= f.text_field :bltin_progresoAsist %>
+  </div>
+  <div class="field">
+    <%= f.label :bltin_progresoEval %><br>
+    <%= f.text_field :bltin_progresoEval %>
+  </div>
+  <div class="field">
+    <%= f.label :bltin_porcentaje %><br>
+    <%= f.text_field :bltin_porcentaje %>
+  </div>
+  <div class="field">
+    <%= f.label :bltin_fechafin %><br>
+    <%= f.date_select :bltin_fechafin %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

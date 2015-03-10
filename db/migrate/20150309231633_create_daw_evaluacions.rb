@@ -4,7 +4,7 @@ class CreateDawEvaluacions < ActiveRecord::Migration
       t.integer :eval_ponderacion
       t.date :eval_periodo
       t.integer :eval_orden
-      t.integer :eval_tipoEval
+      t.integer :eval_tipoeval
       t.references :daw_actividad, index: true
       t.references :daw_curso_tema, index: true
 

@@ -1,0 +1,29 @@
+<%= form_for(@daw_calificacion) do |f| %>
+  <% if @daw_calificacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_calificacion.errors.count, "error") %> prohibited this daw_calificacion from being saved:</h2>
+
+      <ul>
+      <% @daw_calificacion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :calif_notaObtenida %><br>
+    <%= f.number_field :calif_notaObtenida %>
+  </div>
+  <div class="field">
+    <%= f.label :calif_presento %><br>
+    <%= f.check_box :calif_presento %>
+  </div>
+  <div class="field">
+    <%= f.label :calif_fecha %><br>
+    <%= f.text_field :calif_fecha %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

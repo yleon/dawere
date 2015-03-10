@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calif_notaObtenida: 1
+  calif_presento: false
+  calif_fecha: 
+
+two:
+  calif_notaObtenida: 1
+  calif_presento: false
+  calif_fecha: 

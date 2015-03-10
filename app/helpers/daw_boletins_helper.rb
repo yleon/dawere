@@ -1,0 +1,2 @@
+module DawBoletinsHelper
+end

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Boletins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bltin nota</th>
+      <th>Bltin progresoasist</th>
+      <th>Bltin progresoeval</th>
+      <th>Bltin porcentaje</th>
+      <th>Bltin fechafin</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_boletins.each do |daw_boletin| %>
+      <tr>
+        <td><%= daw_boletin.bltin_nota %></td>
+        <td><%= daw_boletin.bltin_progresoAsist %></td>
+        <td><%= daw_boletin.bltin_progresoEval %></td>
+        <td><%= daw_boletin.bltin_porcentaje %></td>
+        <td><%= daw_boletin.bltin_fechafin %></td>
+        <td><%= link_to 'Show', daw_boletin %></td>
+        <td><%= link_to 'Edit', edit_daw_boletin_path(daw_boletin) %></td>
+        <td><%= link_to 'Destroy', daw_boletin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw boletin', new_daw_boletin_path %>

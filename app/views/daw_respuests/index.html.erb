@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Respuests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resp puntaje</th>
+      <th>Resp valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_respuests.each do |daw_respuest| %>
+      <tr>
+        <td><%= daw_respuest.resp_puntaje %></td>
+        <td><%= daw_respuest.resp_valor %></td>
+        <td><%= link_to 'Show', daw_respuest %></td>
+        <td><%= link_to 'Edit', edit_daw_respuest_path(daw_respuest) %></td>
+        <td><%= link_to 'Destroy', daw_respuest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw respuest', new_daw_respuest_path %>

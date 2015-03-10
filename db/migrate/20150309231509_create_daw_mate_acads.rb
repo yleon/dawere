@@ -5,7 +5,7 @@ class CreateDawMateAcads < ActiveRecord::Migration
       t.text :mac_descrip
       t.string :mac_archivo
       t.boolean :mac_disponible
-      t.boolean :mac_estado
+      t.string :mac_estado
       t.string :mac_url
       t.integer :mac_tipo
       t.string :mac_palabsclave, array: true, default: []

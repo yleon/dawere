@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309232423) do
+ActiveRecord::Schema.define(version: 20150310143326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20150309232423) do
     t.text     "act_descripcion"
     t.boolean  "act_disponible"
     t.time     "act_duracion"
-    t.boolean  "act_estado"
-    t.integer  "act_cantidadPreg"
+    t.string   "act_estado"
+    t.integer  "act_cantidadpreg"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -40,14 +40,55 @@ ActiveRecord::Schema.define(version: 20150309232423) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "daw_asistirs", force: :cascade do |t|
+    t.date     "asist_fecha"
+    t.integer  "daw_inscripcion_id"
+    t.integer  "daw_tema_mate_acad_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "daw_asistirs", ["daw_inscripcion_id"], name: "index_daw_asistirs_on_daw_inscripcion_id", using: :btree
+  add_index "daw_asistirs", ["daw_tema_mate_acad_id"], name: "index_daw_asistirs_on_daw_tema_mate_acad_id", using: :btree
+
+  create_table "daw_boletins", force: :cascade do |t|
+    t.integer  "bltin_nota"
+    t.string   "bltin_progresoasist"
+    t.string   "bltin_progresoeval"
+    t.float    "bltin_porcentaje"
+    t.date     "bltin_fechafin"
+    t.integer  "daw_curso_id"
+    t.integer  "daw_inscripcion_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "daw_boletins", ["daw_curso_id"], name: "index_daw_boletins_on_daw_curso_id", using: :btree
+  add_index "daw_boletins", ["daw_inscripcion_id"], name: "index_daw_boletins_on_daw_inscripcion_id", using: :btree
+
+  create_table "daw_calificacions", force: :cascade do |t|
+    t.integer  "calif_notaobtenida"
+    t.boolean  "calif_presento"
+    t.date     "calif_fecha"
+    t.integer  "daw_actividad_id"
+    t.integer  "daw_inscripcion_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "daw_calificacions", ["daw_actividad_id"], name: "index_daw_calificacions_on_daw_actividad_id", using: :btree
+  add_index "daw_calificacions", ["daw_inscripcion_id"], name: "index_daw_calificacions_on_daw_inscripcion_id", using: :btree
+
   create_table "daw_codigos", force: :cascade do |t|
     t.integer  "cod_valor"
     t.string   "cod_estado"
     t.integer  "daw_promo_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "daw_inscripcion_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
+  add_index "daw_codigos", ["daw_inscripcion_id"], name: "index_daw_codigos_on_daw_inscripcion_id", using: :btree
   add_index "daw_codigos", ["daw_promo_id"], name: "index_daw_codigos_on_daw_promo_id", using: :btree
 
   create_table "daw_comunicados", force: :cascade do |t|
@@ -63,19 +104,23 @@ ActiveRecord::Schema.define(version: 20150309232423) do
   create_table "daw_curso_comunicados", force: :cascade do |t|
     t.date     "curcom_fechaenviado"
     t.integer  "daw_comunicado_id"
+    t.integer  "daw_curso_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
 
   add_index "daw_curso_comunicados", ["daw_comunicado_id"], name: "index_daw_curso_comunicados_on_daw_comunicado_id", using: :btree
+  add_index "daw_curso_comunicados", ["daw_curso_id"], name: "index_daw_curso_comunicados_on_daw_curso_id", using: :btree
 
   create_table "daw_curso_encuests", force: :cascade do |t|
     t.date     "curenc_periodo"
     t.integer  "daw_encuest_id"
+    t.integer  "daw_curso_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
+  add_index "daw_curso_encuests", ["daw_curso_id"], name: "index_daw_curso_encuests_on_daw_curso_id", using: :btree
   add_index "daw_curso_encuests", ["daw_encuest_id"], name: "index_daw_curso_encuests_on_daw_encuest_id", using: :btree
 
   create_table "daw_curso_matriculas", force: :cascade do |t|
@@ -90,14 +135,16 @@ ActiveRecord::Schema.define(version: 20150309232423) do
 
   create_table "daw_curso_promos", force: :cascade do |t|
     t.integer  "daw_promo_id"
+    t.integer  "daw_curso_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
+  add_index "daw_curso_promos", ["daw_curso_id"], name: "index_daw_curso_promos_on_daw_curso_id", using: :btree
   add_index "daw_curso_promos", ["daw_promo_id"], name: "index_daw_curso_promos_on_daw_promo_id", using: :btree
 
   create_table "daw_curso_temas", force: :cascade do |t|
-    t.integer  "cursotema_ordenTema"
+    t.integer  "cursotema_ordentema"
     t.integer  "cursotema_semana"
     t.integer  "daw_curso_id"
     t.integer  "daw_tema_id"
@@ -110,13 +157,14 @@ ActiveRecord::Schema.define(version: 20150309232423) do
 
   create_table "daw_cursos", force: :cascade do |t|
     t.string   "curso_nombre"
-    t.text     "curso_descripcionMeta"
-    t.text     "curso_descripcionCurso"
-    t.text     "curso_descripcionPasos"
-    t.boolean  "curso_estado"
+    t.text     "curso_descripcionmeta"
+    t.text     "curso_descripcioncurso"
+    t.text     "curso_descripcionpasos"
+    t.string   "curso_estado"
     t.integer  "curso_periodo"
-    t.integer  "curso_tipoLapso"
-    t.integer  "curso_tipoPrecio"
+    t.integer  "curso_tipolapso"
+    t.integer  "curso_tipoprecio"
+    t.boolean  "curso_visible"
     t.integer  "daw_periodo_acad_id"
     t.integer  "daw_grado_id"
     t.integer  "daw_asignatura_id"
@@ -140,7 +188,7 @@ ActiveRecord::Schema.define(version: 20150309232423) do
     t.integer  "eval_ponderacion"
     t.date     "eval_periodo"
     t.integer  "eval_orden"
-    t.integer  "eval_tipoEval"
+    t.integer  "eval_tipoeval"
     t.integer  "daw_actividad_id"
     t.integer  "daw_curso_tema_id"
     t.datetime "created_at",        null: false
@@ -153,7 +201,7 @@ ActiveRecord::Schema.define(version: 20150309232423) do
   create_table "daw_grados", force: :cascade do |t|
     t.string   "grado_nombre"
     t.text     "grado_descripcion"
-    t.boolean  "grado_estado"
+    t.string   "grado_estado"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
@@ -169,6 +217,22 @@ ActiveRecord::Schema.define(version: 20150309232423) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
+  create_table "daw_inscripcions", force: :cascade do |t|
+    t.date     "insc_fechaini"
+    t.date     "insc_fechafin"
+    t.string   "insc_estado"
+    t.integer  "insc_tipo"
+    t.string   "insc_estadopago"
+    t.string   "insc_estadodoc"
+    t.integer  "daw_curso_id"
+    t.integer  "daw_matricula_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "daw_inscripcions", ["daw_curso_id"], name: "index_daw_inscripcions_on_daw_curso_id", using: :btree
+  add_index "daw_inscripcions", ["daw_matricula_id"], name: "index_daw_inscripcions_on_daw_matricula_id", using: :btree
 
   create_table "daw_log_errors", force: :cascade do |t|
     t.text     "loge_sesion"
@@ -200,7 +264,7 @@ ActiveRecord::Schema.define(version: 20150309232423) do
     t.text     "mac_descrip"
     t.string   "mac_archivo"
     t.boolean  "mac_disponible"
-    t.boolean  "mac_estado"
+    t.string   "mac_estado"
     t.string   "mac_url"
     t.integer  "mac_tipo"
     t.string   "mac_palabsclave", default: [],              array: true
@@ -210,16 +274,18 @@ ActiveRecord::Schema.define(version: 20150309232423) do
 
   create_table "daw_matricula_promos", force: :cascade do |t|
     t.integer  "daw_promo_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "daw_matricula_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
+  add_index "daw_matricula_promos", ["daw_matricula_id"], name: "index_daw_matricula_promos_on_daw_matricula_id", using: :btree
   add_index "daw_matricula_promos", ["daw_promo_id"], name: "index_daw_matricula_promos_on_daw_promo_id", using: :btree
 
   create_table "daw_matriculas", force: :cascade do |t|
     t.string   "matri_nombre"
-    t.boolean  "matri_estado"
-    t.integer  "matri_tipoPrecio"
+    t.string   "matri_estado"
+    t.integer  "matri_tipoprecio"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -241,7 +307,7 @@ ActiveRecord::Schema.define(version: 20150309232423) do
     t.text     "pac_descripcion"
     t.date     "pac_fechaini"
     t.date     "pac_fechafin"
-    t.boolean  "pac_estado"
+    t.string   "pac_estado"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -259,7 +325,7 @@ ActiveRecord::Schema.define(version: 20150309232423) do
   create_table "daw_pregunts", force: :cascade do |t|
     t.string   "preg_descripcion"
     t.integer  "preg_ponderacion"
-    t.integer  "preg_cantOpcion"
+    t.integer  "preg_cantopcion"
     t.integer  "preg_tipo"
     t.integer  "daw_actividad_id"
     t.datetime "created_at",       null: false
@@ -305,6 +371,18 @@ ActiveRecord::Schema.define(version: 20150309232423) do
 
   add_index "daw_respuestaes", ["daw_preguntae_id"], name: "index_daw_respuestaes_on_daw_preguntae_id", using: :btree
 
+  create_table "daw_respuests", force: :cascade do |t|
+    t.string   "resp_puntaje"
+    t.integer  "resp_valor"
+    t.integer  "daw_opcion_id"
+    t.integer  "daw_calificacion_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "daw_respuests", ["daw_calificacion_id"], name: "index_daw_respuests_on_daw_calificacion_id", using: :btree
+  add_index "daw_respuests", ["daw_opcion_id"], name: "index_daw_respuests_on_daw_opcion_id", using: :btree
+
   create_table "daw_tablas", force: :cascade do |t|
     t.string   "tab_nombre"
     t.string   "tab_nemonico"
@@ -330,8 +408,18 @@ ActiveRecord::Schema.define(version: 20150309232423) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "daw_asistirs", "daw_inscripcions"
+  add_foreign_key "daw_asistirs", "daw_tema_mate_acads"
+  add_foreign_key "daw_boletins", "daw_cursos"
+  add_foreign_key "daw_boletins", "daw_inscripcions"
+  add_foreign_key "daw_calificacions", "daw_actividads"
+  add_foreign_key "daw_calificacions", "daw_inscripcions"
+  add_foreign_key "daw_codigos", "daw_inscripcions"
   add_foreign_key "daw_codigos", "daw_promos"
   add_foreign_key "daw_curso_comunicados", "daw_comunicados"
+  add_foreign_key "daw_curso_comunicados", "daw_cursos"
+  add_foreign_key "daw_curso_comunicados", "daw_cursos"
+  add_foreign_key "daw_curso_comunicados", "daw_cursos"
   add_foreign_key "daw_curso_encuests", "daw_encuests"
   add_foreign_key "daw_curso_matriculas", "daw_cursos"
   add_foreign_key "daw_curso_matriculas", "daw_matriculas"
@@ -343,12 +431,17 @@ ActiveRecord::Schema.define(version: 20150309232423) do
   add_foreign_key "daw_cursos", "daw_periodo_acads"
   add_foreign_key "daw_evaluacions", "daw_actividads"
   add_foreign_key "daw_evaluacions", "daw_curso_temas"
+  add_foreign_key "daw_inscripcions", "daw_cursos"
+  add_foreign_key "daw_inscripcions", "daw_matriculas"
+  add_foreign_key "daw_matricula_promos", "daw_matriculas"
   add_foreign_key "daw_matricula_promos", "daw_promos"
   add_foreign_key "daw_opcions", "daw_pregunts"
   add_foreign_key "daw_preguntaes", "daw_encuests"
   add_foreign_key "daw_pregunts", "daw_actividads"
   add_foreign_key "daw_registros", "daw_tablas"
   add_foreign_key "daw_respuestaes", "daw_preguntaes"
+  add_foreign_key "daw_respuests", "daw_calificacions"
+  add_foreign_key "daw_respuests", "daw_opcions"
   add_foreign_key "daw_tema_mate_acads", "daw_mate_acads"
   add_foreign_key "daw_tema_mate_acads", "daw_temas"
 end

@@ -1,7 +1,7 @@
 class CreateDawCursoTemas < ActiveRecord::Migration
   def change
     create_table :daw_curso_temas do |t|
-      t.integer :cursotema_ordenTema
+      t.integer :cursotema_ordentema
       t.integer :cursotema_semana
       t.references :daw_curso, index: true
       t.references :daw_tema, index: true

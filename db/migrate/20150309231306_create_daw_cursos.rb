@@ -2,13 +2,14 @@ class CreateDawCursos < ActiveRecord::Migration
   def change
     create_table :daw_cursos do |t|
       t.string :curso_nombre
-      t.text :curso_descripcionMeta
-      t.text :curso_descripcionCurso
-      t.text :curso_descripcionPasos
-      t.boolean :curso_estado
+      t.text :curso_descripcionmeta
+      t.text :curso_descripcioncurso
+      t.text :curso_descripcionpasos
+      t.string :curso_estado
       t.integer :curso_periodo
-      t.integer :curso_tipoLapso
-      t.integer :curso_tipoPrecio
+      t.integer :curso_tipolapso
+      t.integer :curso_tipoprecio
+      t.boolean :curso_visible
       t.references :daw_periodo_acad, index: true
       t.references :daw_grado, index: true
       t.references :daw_asignatura, index: true

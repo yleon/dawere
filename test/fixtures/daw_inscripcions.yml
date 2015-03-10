@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  insc_fechaini: 2015-03-10
+  insc_fechafin: 2015-03-10
+  insc_estado: false
+  insc_tipo: 1
+  insc_estadoPago: MyString
+  insc_estadoDoc: MyString
+
+two:
+  insc_fechaini: 2015-03-10
+  insc_fechafin: 2015-03-10
+  insc_estado: false
+  insc_tipo: 1
+  insc_estadoPago: MyString
+  insc_estadoDoc: MyString

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bltin_nota: 1
+  bltin_progresoAsist: MyString
+  bltin_progresoEval: MyString
+  bltin_porcentaje: 1.5
+  bltin_fechafin: 2015-03-10
+
+two:
+  bltin_nota: 1
+  bltin_progresoAsist: MyString
+  bltin_progresoEval: MyString
+  bltin_porcentaje: 1.5
+  bltin_fechafin: 2015-03-10

@@ -1,0 +1,21 @@
+<%= form_for(@daw_asistir) do |f| %>
+  <% if @daw_asistir.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daw_asistir.errors.count, "error") %> prohibited this daw_asistir from being saved:</h2>
+
+      <ul>
+      <% @daw_asistir.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :asist_fecha %><br>
+    <%= f.date_select :asist_fecha %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

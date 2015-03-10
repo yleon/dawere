@@ -5,7 +5,7 @@ class CreateDawPeriodoAcads < ActiveRecord::Migration
       t.text :pac_descripcion
       t.date :pac_fechaini
       t.date :pac_fechafin
-      t.boolean :pac_estado
+      t.string :pac_estado
 
       t.timestamps null: false
     end
