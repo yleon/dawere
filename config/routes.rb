@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  resources :daw_opcions
+
+  resources :daw_archivos
+
+  resources :daw_pregunts
+
+  resources :daw_evaluacions
+
+  resources :daw_actividads
+
+  resources :daw_tema_mate_acads
+
+  resources :daw_mate_acads
+
+  resources :daw_curso_temas
+
+  resources :daw_temas
+
+  resources :daw_matriculas
+
+  resources :daw_cursos
+
+  resources :daw_asignaturas
+
+  resources :daw_grados
+
+  resources :daw_periodo_acads
+
   resources :daw_respuestaes
 
   resources :daw_preguntaes

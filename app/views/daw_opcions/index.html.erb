@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Opcions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_opcions.each do |daw_opcion| %>
+      <tr>
+        <td><%= link_to 'Show', daw_opcion %></td>
+        <td><%= link_to 'Edit', edit_daw_opcion_path(daw_opcion) %></td>
+        <td><%= link_to 'Destroy', daw_opcion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw opcion', new_daw_opcion_path %>

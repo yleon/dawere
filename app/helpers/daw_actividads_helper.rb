@@ -1,0 +1,2 @@
+module DawActividadsHelper
+end

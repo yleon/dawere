@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daw Tema Mate Acads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daw_tema_mate_acads.each do |daw_tema_mate_acad| %>
+      <tr>
+        <td><%= link_to 'Show', daw_tema_mate_acad %></td>
+        <td><%= link_to 'Edit', edit_daw_tema_mate_acad_path(daw_tema_mate_acad) %></td>
+        <td><%= link_to 'Destroy', daw_tema_mate_acad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daw tema mate acad', new_daw_tema_mate_acad_path %>
