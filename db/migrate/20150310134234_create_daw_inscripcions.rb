@@ -8,12 +8,14 @@ class CreateDawInscripcions < ActiveRecord::Migration
       t.string :insc_estadopago
       t.string :insc_estadodoc
       t.references :daw_curso, index: true
-      t.references :daw_matricula, index:true
+      t.references :daw_matricula, index: true
+      t.references :daw_rol_pers_insc, index: true
 
 
       t.timestamps null: false
     end
     add_foreign_key :daw_inscripcions, :daw_cursos
     add_foreign_key :daw_inscripcions, :daw_matriculas
+    add_foreign_key :daw_inscripcions, :daw_rol_pers_inscs
   end
 end

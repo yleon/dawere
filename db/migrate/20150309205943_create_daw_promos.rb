@@ -7,8 +7,10 @@ class CreateDawPromos < ActiveRecord::Migration
       t.date :promo_fechafin
       t.string :promo_tipopromocion
       t.string :promo_estado
+      t.references :daw_alianza, index: true
 
       t.timestamps null: false
     end
+      add_foreign_key :daw_promos, :daw_alianzas
   end
 end

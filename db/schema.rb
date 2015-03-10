@@ -553,6 +553,7 @@ ActiveRecord::Schema.define(version: 20150310174841) do
   add_index "daw_trabajos", ["daw_persona_id"], name: "index_daw_trabajos_on_daw_persona_id", using: :btree
 
   create_table "daw_usuarios", force: :cascade do |t|
+    t.string   "daw_estado",                          null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

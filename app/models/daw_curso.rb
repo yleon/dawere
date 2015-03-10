@@ -7,6 +7,7 @@ class DawCurso < ActiveRecord::Base
 	has_many :daw_curso_comunicado
 	has_many :daw_curso_encuest
 	has_many :daw_curso_promo
+	has_many :daw_contrato
 
 	validates :curso_nombre, :curso_estado, :curso_periodo, :curso_tipolapso, :curso_tipoprecio, presence: true
 	validates :curso_nombre, uniqueness: true, length: { minimum: 2, maximum: 20 }

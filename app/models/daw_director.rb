@@ -1,2 +1,3 @@
-class DawDirector < ActiveRecord::Base
+class DawDirector < DawPersona
+	validates :dire_fechaingr, presence: true
 end

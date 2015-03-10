@@ -7,10 +7,10 @@ class CreateDawTrabajos < ActiveRecord::Migration
       t.string :trab_direccion
       t.date :trab_fecha
       t.string :trab_estado
-      t.references :daw_persona, index: true
+      t.references :daw_representante, index: true
 
       t.timestamps null: false
     end
-    add_foreign_key :daw_trabajos, :daw_personas
+    add_foreign_key :daw_trabajos, :daw_representantes
   end
 end

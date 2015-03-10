@@ -2,6 +2,7 @@ class DeviseCreateDawUsuarios < ActiveRecord::Migration
   def change
     create_table(:daw_usuarios) do |t|
       ## Database authenticatable
+      t.string :daw_estado,         null: false
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
