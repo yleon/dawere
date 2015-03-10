@@ -1,3 +1,4 @@
 class DawCursoMatricula < ActiveRecord::Base
-	belongs_to :daw_curso, :daw_matricula
+	belongs_to :daw_curso
+	belongs_to :daw_matricula
 end
