@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dawere</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Daw_Development</title>
+  <%= stylesheet_link_tag "aplication" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+<h1>Header</h1> 
+<%= link_to "Vianny", vianny_index_path , :class => 'nbar'%> 
+<%= link_to "Alfredo", alfredo_index_path , :class => 'nbar'%> 
+<%= link_to "Hector", hector_index_path , :class => 'nbar'%>
+<%= link_to "Home", root_path , :class => 'nbar'%>
+</header>
 
 <%= yield %>
 

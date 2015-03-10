@@ -1,0 +1,2 @@
+module HectorHelper
+end

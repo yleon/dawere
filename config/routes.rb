@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'alfredo/index'
+
+  get 'hector/index'
+
+  get 'vianny/index'
+
+  get 'index/index'
+
   resources :daw_rol_pers_inscs
 
   resources :daw_retiros
@@ -98,11 +106,11 @@ Rails.application.routes.draw do
 
   resources :daw_tablas
 
+  # You can have the root of your site routed with "root"
+  root 'index#index'
+  match ':controller(/:action(/:id))(.:format)', :via => [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
