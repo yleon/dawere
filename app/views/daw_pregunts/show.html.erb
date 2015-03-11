@@ -1,4 +1,24 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p><br><br><br>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @daw_pregunt.preg_descripcion %>
+</p>
+
+<p>
+  <strong>Ponderacion:</strong>
+  <%= @daw_pregunt.preg_ponderacion%>
+</p>
+
+<p>
+  <strong>Cantidad de Opciones:</strong>
+  <%= @daw_pregunt.preg_cantopcion %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @daw_pregunt.preg_tipo %>
+</p>
 
 <%= link_to 'Edit', edit_daw_pregunt_path(@daw_pregunt) %> |
 <%= link_to 'Back', daw_pregunts_path %>

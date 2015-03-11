@@ -1,4 +1,30 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p><br><br>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @daw_periodo_acad.pac_nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @daw_periodo_acad.pac_descripcion%>
+</p>
+
+<p>
+  <strong>Fecha de inicio:</strong>
+  <%= @daw_periodo_acad.pac_fechaini %>
+</p>
+
+<p>
+  <strong>Fecha de culminacion:</strong>
+  <%= @daw_periodo_acad.pac_fechafin %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @daw_periodo_acad.pac_estado %>
+</p>
+<p>
 
 <%= link_to 'Edit', edit_daw_periodo_acad_path(@daw_periodo_acad) %> |
 <%= link_to 'Back', daw_periodo_acads_path %>

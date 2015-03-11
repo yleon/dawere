@@ -69,6 +69,6 @@ class DawBoletinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_boletin_params
-      params.require(:daw_boletin).permit(:bltin_nota, :bltin_progresoAsist, :bltin_progresoEval, :bltin_porcentaje, :bltin_fechafin)
+      params.require(:daw_boletin).permit(:bltin_nota, :bltin_progresoasist, :bltin_progresoeval, :bltin_porcentaje, :bltin_fechafin)
     end
 end

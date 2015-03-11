@@ -1,5 +1,5 @@
 class DawPromo < ActiveRecord::Base
-	belongs_to :daw_alianzas
+	belongs_to :daw_alianza
 	has_many :daw_codigos
 	has_many :daw_matricula_promos
 	has_many :daw_curso_promos

@@ -69,6 +69,7 @@ class DawActividadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_actividad_params
-      params[:daw_actividad]
+      params.require(:daw_actividad).permit(:act_nombre, :act_descripcion, :act_disponible, :act_duracion, :act_estado, :act_cantidadpreg)
     end
 end
+

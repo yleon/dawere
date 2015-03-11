@@ -69,6 +69,6 @@ class DawTrabajosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_trabajo_params
-      params.require(:daw_trabajo).permit(:trab_nombre, :trab_tipo, :trab_telefono, :trab_direccion, :trab_fecha, :trab_estado, :daw_persona_id)
+      params.require(:daw_trabajo).permit(:trab_nombre, :trab_tipo, :trab_telefono, :trab_direccion, :trab_fecha, :trab_estado, :daw_representante_id)
     end
 end

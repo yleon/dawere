@@ -69,6 +69,6 @@ class DawMateAcadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_mate_acad_params
-      params[:daw_mate_acad]
+      params.require(:daw_mate_acads).permit(:mac_nombre, :mac_descrip, :mac_archivo, :mac_disponible, :mac_estado, :mac_url, :mac_tipo, :mac_palabsclave, :daw_prof_asist_id)
     end
 end

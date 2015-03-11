@@ -69,6 +69,6 @@ class DawContratosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_contrato_params
-      params.require(:daw_contrato).permit(:cont_tiempo, :cont_fechaini, :cont_fechafin, :cont_archivo, :cont_descripcion, :daw_persona_id)
+      params.require(:daw_contrato).permit(:cont_tiempo, :cont_fechaini, :cont_fechafin, :cont_archivo, :cont_descripcion, :daw_prof_asist_id, :daw_curso_id)
     end
 end

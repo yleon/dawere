@@ -1,4 +1,34 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p><br><br><br>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @daw_actividad.act_nombre %>
+</p>
+<p>
+  <strong>Descripcion</strong>
+  <%= @daw_actividad.act_descripcion %>
+</p>
+<p>
+  <strong>Esta Disponible?:</strong>
+	  <%if (@daw_actividad.act_disponible==true)%>
+	   <%= :si %>
+	  <%else%>
+	   <%= :no %>
+	  <%end%>
+</p>
+<p>
+  <strong>Duracion:</strong>
+  <%= @daw_actividad.act_duracion %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @daw_actividad.act_estado %>
+</p>
+<p>
+  <strong>Cntidad de preguntas:</strong>
+  <%= @daw_actividad.act_cantidadpreg %>
+</p>
 
 <%= link_to 'Edit', edit_daw_actividad_path(@daw_actividad) %> |
 <%= link_to 'Back', daw_actividads_path %>

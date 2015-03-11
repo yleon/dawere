@@ -5,6 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Nombre</th>
+      <th>Estado de la matricula</th>
+      <th>Tipo de precio</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +15,12 @@
   <tbody>
     <% @daw_matriculas.each do |daw_matricula| %>
       <tr>
+        <td><%= daw_matricula.matri_nombre %></td>
+        <td><%= daw_matricula.matri_estado %></td>
+        <td><%= daw_matricula.matri_tipoprecio %></td>
         <td><%= link_to 'Show', daw_matricula %></td>
         <td><%= link_to 'Edit', edit_daw_matricula_path(daw_matricula) %></td>
-        <td><%= link_to 'Destroy', daw_matricula, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', daw_matricula, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

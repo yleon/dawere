@@ -69,6 +69,7 @@ class DawAsignaturasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_asignatura_params
-      params[:daw_asignatura]
+      params.require(:daw_asignatura).permit(:asig_nombre, :asig_descripcion)
     end
 end
+

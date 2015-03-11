@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Nombre:</strong>
+  <%= @daw_tema.tema_nombre %>
+</p>
+
+<p>
+  <strong>Duracion:</strong>
+  <%= @daw_tema.tema_duracion%>
+</p>
+
 <%= link_to 'Edit', edit_daw_tema_path(@daw_tema) %> |
 <%= link_to 'Back', daw_temas_path %>

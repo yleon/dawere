@@ -11,6 +11,27 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :pac_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :Descripcion %><br>
+    <%= f.text_area :pac_descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :Fecha_de_inicio %><br>
+    <%= f.date_select :pac_fechaini %>
+  </div>
+  <div class="field">
+    <%= f.label :Fecha_de_culminacion %><br>
+    <%= f.date_select :pac_fechafin %>
+  </div>
+  <div class="field">
+    <%= f.label :Estado %><br>
+    <%=f.text_field :pac_estado %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -5,6 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Nombre</th>
+      <th>Descripcion del grado</th>
+      <th>Estado del grado</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +15,12 @@
   <tbody>
     <% @daw_grados.each do |daw_grado| %>
       <tr>
+        <td><%= daw_grado.grado_nombre %></td>
+        <td><%= daw_grado.grado_descripcion %></td>
+        <td><%= daw_grado.grado_estado %></td>
         <td><%= link_to 'Show', daw_grado %></td>
         <td><%= link_to 'Edit', edit_daw_grado_path(daw_grado) %></td>
-        <td><%= link_to 'Destroy', daw_grado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', daw_grado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

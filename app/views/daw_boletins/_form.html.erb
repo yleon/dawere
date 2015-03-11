@@ -1,4 +1,4 @@
-<%= form_for(@daw_boletin) do |f| %>
+<%= form_for(@daw_boletin) do |f| %><br><br><br><br><br>
   <% if @daw_boletin.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@daw_boletin.errors.count, "error") %> prohibited this daw_boletin from being saved:</h2>
@@ -16,12 +16,12 @@
     <%= f.number_field :bltin_nota %>
   </div>
   <div class="field">
-    <%= f.label :bltin_progresoAsist %><br>
-    <%= f.text_field :bltin_progresoAsist %>
+    <%= f.label :bltin_progresoasist %><br>
+    <%= f.text_field :bltin_progresoasist %>
   </div>
   <div class="field">
-    <%= f.label :bltin_progresoEval %><br>
-    <%= f.text_field :bltin_progresoEval %>
+    <%= f.label :bltin_progresoeval %><br>
+    <%= f.text_field :bltin_progresoeval %>
   </div>
   <div class="field">
     <%= f.label :bltin_porcentaje %><br>

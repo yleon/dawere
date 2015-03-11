@@ -69,6 +69,6 @@ class DawPeriodoAcadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_periodo_acad_params
-      params[:daw_periodo_acad]
+      params.require(:daw_periodo_acad).permit(:pac_nombre, :pac_descripcion, :pac_fechaini, :pac_fechafin, :pac_estado)
     end
 end

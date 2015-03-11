@@ -5,6 +5,8 @@ class CreateDawCursos < ActiveRecord::Migration
       t.text :curso_descripcionmeta
       t.text :curso_descripcioncurso
       t.text :curso_descripcionpasos
+      t.string :curso_imagen
+      t.string :curso_video
       t.string :curso_estado
       t.integer :curso_periodo
       t.integer :curso_tipolapso

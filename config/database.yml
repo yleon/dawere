@@ -8,7 +8,7 @@ development:
   database: devDawere
   pool: 5
   username: postgres
-  password: 12345
+  password: 1234
   owner: postgres
 
 # Warning: The database defined as "test" will be erased and

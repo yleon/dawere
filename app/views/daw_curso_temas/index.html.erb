@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>Orden</th>
+      <th>Semana</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +14,8 @@
   <tbody>
     <% @daw_curso_temas.each do |daw_curso_tema| %>
       <tr>
+        <td><%= daw_curso_tema.cursotema_ordentema %></td>
+        <td><%= daw_curso_tema.cursotema_semana %></td>
         <td><%= link_to 'Show', daw_curso_tema %></td>
         <td><%= link_to 'Edit', edit_daw_curso_tema_path(daw_curso_tema) %></td>
         <td><%= link_to 'Destroy', daw_curso_tema, method: :delete, data: { confirm: 'Are you sure?' } %></td>

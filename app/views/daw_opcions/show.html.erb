@@ -1,4 +1,25 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p><br><br><br>
 
 <%= link_to 'Edit', edit_daw_opcion_path(@daw_opcion) %> |
 <%= link_to 'Back', daw_opcions_path %>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @daw_opcion.opc_descripcion %>
+</p>
+<p>
+  <strong>Es Correcta??:</strong>
+	  <%if (@daw_opcion.opc_correcta==true)%>
+	   <%= :si %>
+	  <%else%>
+	   <%= :no %>
+	  <%end%>
+</p>
+<p>
+  <strong>Motivo:</strong>
+  <%= @daw_opcion.opc_motivo %>
+</p>
+<p>
+  <strong>Tipo:</strong>
+  <%= @daw_opcion.opc_tipo %>
+</p>

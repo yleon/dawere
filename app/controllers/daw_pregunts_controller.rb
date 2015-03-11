@@ -69,6 +69,6 @@ class DawPreguntsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_pregunt_params
-      params[:daw_pregunt]
+      params.require(:daw_pregunt).permit(:preg_descripcion, :preg_ponderacion, :preg_cantopcion, :preg_tipo)
     end
 end

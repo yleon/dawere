@@ -1,4 +1,43 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p><br><br><br>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @daw_mate_acad.mac_nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @daw_mate_acad.mac_descrip%>
+</p>
+
+<p>
+  <strong>Archivo:</strong>
+  <%= @daw_mate_acad.mac_archivo %>
+</p>
+<p>
+  <strong>Esta Disponible?:</strong>
+	  <%if (@daw_mate_acad.mac_disponible==true)%>
+	   <%= :si %>
+	  <%else%>
+	   <%= :no %>
+	  <%end%>
+</p>
+<p>
+  <strong>Estado:</strong>
+  <%= @daw_mate_acad.mac_estado %>
+</p>
+<p>
+  <strong>URL:</strong>
+  <%= @daw_mate_acad.mac_url %>
+</p>
+<p>
+  <strong>Tipo:</strong>
+  <%= @daw_mate_acad.mac_tipo %>
+</p>
+<p>
+  <strong>Palabras clave:</strong>
+  <%= @daw_mate_acad.mac_palabsclave %>
+</p>
 
 <%= link_to 'Edit', edit_daw_mate_acad_path(@daw_mate_acad) %> |
 <%= link_to 'Back', daw_mate_acads_path %>

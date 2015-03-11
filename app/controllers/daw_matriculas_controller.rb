@@ -69,6 +69,8 @@ class DawMatriculasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_matricula_params
-      params[:daw_matricula]
+      params.require(:daw_matricula).permit(:matri_nombre, :matri_estado, :matri_tipoprecio)
     end
 end
+
+

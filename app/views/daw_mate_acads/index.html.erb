@@ -5,13 +5,34 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Archivo</th>
+      <th>Disponible?</th>
+      <th>Estado</th>
+      <th>url</th>
+      <th>Tipo</th>
+      <th>Palabras Clave</th>
+      <th>Visible?</th>
+      <th colspan="3">Acciones</th>
     </tr>
   </thead>
 
   <tbody>
     <% @daw_mate_acads.each do |daw_mate_acad| %>
       <tr>
+        <td><%= daw_mate_acad.mac_nombre %></td>
+        <td><%= daw_mate_acad.mac_descrip %></td>
+        <td><%= daw_mate_acad.mac_archivo %></td>
+        <%if (daw_mate_acad.mac_disponible==true)%>
+        <td><%= :si %></td>
+        <%else%>
+        <td><%= :no %></td>
+        <%end%>
+        <td><%= daw_mate_acad.mac_estado %></td>
+        <td><%= daw_mate_acad.mac_url %></td>
+        <td><%= daw_mate_acad.mac_tipo %></td>
+        <td><%= daw_mate_acad.mac_palabsclave %></td>
         <td><%= link_to 'Show', daw_mate_acad %></td>
         <td><%= link_to 'Edit', edit_daw_mate_acad_path(daw_mate_acad) %></td>
         <td><%= link_to 'Destroy', daw_mate_acad, method: :delete, data: { confirm: 'Are you sure?' } %></td>

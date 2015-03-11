@@ -1,4 +1,20 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p><br><br><br><br>
+
+
+<p>
+  <strong>Nombre del grado:</strong>
+  <%= @daw_grado.grado_nombre %>
+</p>
+
+<p>
+  <strong>Descripcion del curso:</strong>
+  <%= @daw_grado.grado_descripcion %>
+</p>
+
+<p>
+  <strong>estado del grado:</strong>
+  <%= @daw_grado.grado_estado %>
+</p>
 
 <%= link_to 'Edit', edit_daw_grado_path(@daw_grado) %> |
 <%= link_to 'Back', daw_grados_path %>

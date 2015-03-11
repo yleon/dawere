@@ -1,4 +1,4 @@
-<%= form_for(@daw_pregunt) do |f| %>
+<%= form_for(@daw_pregunt) do |f| %><br><br><br><br><br>
   <% if @daw_pregunt.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@daw_pregunt.errors.count, "error") %> prohibited this daw_pregunt from being saved:</h2>
@@ -11,7 +11,25 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :Descripcion %><br>
+    <%=f.text_field :preg_descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :Ponderacion %><br>
+    <%= f.number_field :preg_ponderacion %>
+  </div>
+  <div class="field">
+    <%= f.label :Cantidad_de_opciones %><br>
+    <%= f.number_field :preg_cantopcion %>
+  </div>
+  <div class="field">
+    <%= f.label :Tipo %><br>
+    <%= f.number_field :preg_tipo %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

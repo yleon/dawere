@@ -69,6 +69,6 @@ class DawCursosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_curso_params
-      params[:daw_curso]
+      params.require(:daw_curso).permit(:curso_nombre, :curso_estado, :curso_visible, :curso_periodo, :curso_tipolapso, :curso_tipoprecio,:curso_descripcionmeta, :curso_descripcioncurso, :curso_descripcionpasos)
     end
 end

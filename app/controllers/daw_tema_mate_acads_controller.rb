@@ -69,6 +69,6 @@ class DawTemaMateAcadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_tema_mate_acad_params
-      params[:daw_tema_mate_acad]
+      params.require(:daw_tema_mate_acad).permit(:tmac_orden)
     end
 end

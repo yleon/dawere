@@ -69,6 +69,7 @@ class DawTemasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_tema_params
-      params[:daw_tema]
+      params.require(:daw_tema).permit(:tema_nombre, :tema_duracion)
     end
 end
+

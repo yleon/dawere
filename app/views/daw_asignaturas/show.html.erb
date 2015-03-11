@@ -1,4 +1,14 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p><br><br><br><br>
+
+<p>
+  <strong>Nombre de la asignatura:</strong>
+  <%= @daw_asignatura.asig_nombre %>
+</p>
+
+<p>
+  <strong>Descripcion de la asignatura:</strong>
+  <%= @daw_asignatura.asig_descripcion%>
+</p>
 
 <%= link_to 'Edit', edit_daw_asignatura_path(@daw_asignatura) %> |
 <%= link_to 'Back', daw_asignaturas_path %>

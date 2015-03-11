@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>Nombre</th>
+      <th>Duracion</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +14,11 @@
   <tbody>
     <% @daw_temas.each do |daw_tema| %>
       <tr>
+        <td><%= daw_tema.tema_nombre %></td>
+        <td><%= daw_tema.tema_duracion %></td>
         <td><%= link_to 'Show', daw_tema %></td>
         <td><%= link_to 'Edit', edit_daw_tema_path(daw_tema) %></td>
-        <td><%= link_to 'Destroy', daw_tema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', daw_tema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

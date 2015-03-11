@@ -1,4 +1,4 @@
-<%= form_for(@daw_tema) do |f| %>
+<%= form_for(@daw_tema) do |f| %><br><br><br><br><br><br>
   <% if @daw_tema.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@daw_tema.errors.count, "error") %> prohibited this daw_tema from being saved:</h2>
@@ -11,7 +11,17 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :tema_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :Duracion %><br>
+    <%= f.time_field :tema_duracion %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

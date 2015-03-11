@@ -1,4 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Orden:</strong>
+  <%= @daw_curso_tema.cursotema_ordentema %>
+</p>
+<p>
+  <strong>Semana:</strong>
+  <%= @daw_curso_tema.cursotema_semana %>
+</p>
+
 <%= link_to 'Edit', edit_daw_curso_tema_path(@daw_curso_tema) %> |
 <%= link_to 'Back', daw_curso_temas_path %>

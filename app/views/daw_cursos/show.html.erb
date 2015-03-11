@@ -1,4 +1,49 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p><br><br>
+
+<p>
+  <strong>Nombre del curso:</strong>
+  <%= @daw_curso.curso_nombre %>
+</p>
+
+<p>
+  <strong>Descripcion de la meta del curso:</strong>
+  <%= @daw_curso.curso_descripcionmeta%>
+</p>
+
+<p>
+  <strong>Descripcion del curso:</strong>
+  <%= @daw_curso.curso_descripcioncurso %>
+</p>
+
+<p>
+  <strong>Descripcion de los pasos del curso:</strong>
+  <%= @daw_curso.curso_descripcionpasos %>
+</p>
+
+<p>
+  <strong>Estado del curso:</strong>
+  <%= @daw_curso.curso_estado %>
+</p>
+<p>
+  <strong>Periodo del curso:</strong>
+  <%= @daw_curso.curso_periodo %>
+</p>
+<p>
+  <strong>Tipo de fase del curso:</strong>
+  <%= @daw_curso.curso_tipolapso %>
+</p>
+<p>
+  <strong>Tipo de precio del curso:</strong>
+  <%= @daw_curso.curso_tipoprecio %>
+</p>
+<p>
+  <strong>Esta visible?:</strong>
+	  <%if (@daw_curso.curso_visible==true)%>
+	   <%= :si %>
+	  <%else%>
+	   <%= :no %>
+	  <%end%>
+</p>
 
 <%= link_to 'Edit', edit_daw_curso_path(@daw_curso) %> |
 <%= link_to 'Back', daw_cursos_path %>

@@ -69,6 +69,6 @@ class DawCursoTemasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_curso_tema_params
-      params[:daw_curso_tema]
+      params.require(:daw_curso_tema).permit(:cursotema_ordentema,:cursotema_semana)
     end
 end

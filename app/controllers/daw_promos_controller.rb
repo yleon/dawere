@@ -69,6 +69,6 @@ class DawPromosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_promo_params
-      params.require(:daw_promo).permit(:pro_nombre, :pro_porcentaje, :pro_fechaini, :pro_fechafin, :pro_tipopromocion, :pro_estado)
+      params.require(:daw_promo).permit(:pro_nombre, :pro_porcentaje, :pro_fechaini, :pro_fechafin, :pro_tipopromocion, :pro_estado, :daw_alianza_id)
     end
 end

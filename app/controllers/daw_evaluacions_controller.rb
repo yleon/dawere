@@ -69,6 +69,7 @@ class DawEvaluacionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_evaluacion_params
-      params[:daw_evaluacion]
+      params.require(:daw_evaluacion).permit(:eval_ponderacion, :eval_periodo, :eval_orden, :eval_tipoeval)
     end
 end
+

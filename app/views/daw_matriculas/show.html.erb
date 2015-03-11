@@ -1,4 +1,19 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p><br><br><br>
+
+<p>
+  <strong>Nombre de la Matricula:</strong>
+  <%= @daw_matricula.matri_nombre %>
+</p>
+
+<p>
+  <strong>Estado de la matricula:</strong>
+  <%= @daw_matricula.matri_estado%>
+</p>
+
+<p>
+  <strong>Tipo de precio:</strong>
+  <%= @daw_matricula.matri_tipoprecio %>
+</p>
 
 <%= link_to 'Edit', edit_daw_matricula_path(@daw_matricula) %> |
 <%= link_to 'Back', daw_matriculas_path %>

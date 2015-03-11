@@ -1,4 +1,4 @@
-<%= form_for(@daw_asignatura) do |f| %>
+<%= form_for(@daw_asignatura) do |f| %><br><br><br><br>
   <% if @daw_asignatura.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@daw_asignatura.errors.count, "error") %> prohibited this daw_asignatura from being saved:</h2>
@@ -10,6 +10,15 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= f.label :Nombre_de_asignatura %><br>
+    <%= f.text_field :asig_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :Descripcion_de_la_Asignatura %><br>
+    <%= f.text_area :asig_descripcion %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

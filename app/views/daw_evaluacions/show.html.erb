@@ -1,4 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Ponderacion:</strong>
+  <%= @daw_evaluacion.eval_ponderacion %>
+</p>
+
+<p>
+  <strong>Periodo:</strong>
+  <%= @daw_evaluacion.eval_periodo%>
+</p>
+
+<p>
+  <strong>Orden:</strong>
+  <%= @daw_evaluacion.eval_orden %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @daw_evaluacion.eval_tipoeval %>
+</p>
+
 <%= link_to 'Edit', edit_daw_evaluacion_path(@daw_evaluacion) %> |
 <%= link_to 'Back', daw_evaluacions_path %>

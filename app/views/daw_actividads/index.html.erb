@@ -5,6 +5,12 @@
 <table>
   <thead>
     <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Disponible?</th>
+      <th>Duracion</th>
+      <th>Estado</th>
+      <th>Cantidad de Preguntas</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +18,19 @@
   <tbody>
     <% @daw_actividads.each do |daw_actividad| %>
       <tr>
+        <td><%= daw_actividad.act_nombre %></td>
+        <td><%= daw_actividad.act_descripcion %></td>
+        <%if (daw_actividad.act_disponible==true)%>
+        <td><%= :si %></td>
+        <%else%>
+        <td><%= :no %></td>
+        <%end%>
+        <td><%= daw_actividad.act_duracion %></td>
+        <td><%= daw_actividad.act_estado %></td>
+        <td><%= daw_actividad.act_cantidadpreg %></td>
         <td><%= link_to 'Show', daw_actividad %></td>
         <td><%= link_to 'Edit', edit_daw_actividad_path(daw_actividad) %></td>
-        <td><%= link_to 'Destroy', daw_actividad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', daw_actividad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

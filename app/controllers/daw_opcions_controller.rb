@@ -69,6 +69,7 @@ class DawOpcionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_opcion_params
-      params[:daw_opcion]
+      params.require(:daw_opcion).permit(:opc_descripcion, :opc_correcta, :opc_motivo, :opc_tipo)
     end
 end
+

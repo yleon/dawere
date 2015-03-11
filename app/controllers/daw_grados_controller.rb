@@ -69,6 +69,6 @@ class DawGradosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_grado_params
-      params[:daw_grado]
+      params.require(:daw_curso).permit(:grado_nombre, :grado_descripcion, :grado_estado)
     end
 end
