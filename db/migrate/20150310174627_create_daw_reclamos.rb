@@ -1,7 +1,7 @@
 class CreateDawReclamos < ActiveRecord::Migration
   def change
     create_table :daw_reclamos do |t|
-      t.string :recl_descripcion
+      t.text :recl_descripcion
       t.time :recl_fecha
       t.boolean :recl_atendido
       t.integer :recl_tiporeclamo

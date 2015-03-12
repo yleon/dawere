@@ -2,7 +2,7 @@ class CreateDawRespuests < ActiveRecord::Migration
   def change
     create_table :daw_respuests do |t|
       t.string :resp_puntaje
-      t.integer :resp_valor
+      t.string :resp_texto
       t.references :daw_opcion, index: true
       t.references :daw_calificacion, index:true
 

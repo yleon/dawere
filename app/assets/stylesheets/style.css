@@ -8,15 +8,15 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: bold;
+	font-weight: bolder;
 	color: #0000FF;
 	padding-right: 5px;
 }
 
 h2 {
 	font-size: 60px;
-	padding-top: 101px;
-	line-height: 60px;
+	padding-top: 0px;
+	line-height: 40px;
 	text-align: left;
 }
 
@@ -28,7 +28,7 @@ h3 {
 p {
 	margin-bottom: 19px;
 	color: #0000FF;
-	font-weight: bold;
+	font-weight: bolder;
 	font-size: 17.2px
 }
 
@@ -47,10 +47,11 @@ header {
 	transition: 0.2s ease;
 	-o-transition: 0.1s ease;
 	-webkit-transition: 0.2s ease;
-	font-weight: bold;
+	font-weight: bolder;
 	font-size: 17.3px;
 	margin-bottom: 20px;
 	margin-top: 0px;
+	margin-right: 15px;
 
 }
 .btncrud{

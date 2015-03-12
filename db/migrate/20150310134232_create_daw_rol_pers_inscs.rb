@@ -1,7 +1,7 @@
 class CreateDawRolPersInscs < ActiveRecord::Migration
   def change
     create_table :daw_rol_pers_inscs do |t|
-      t.string :rpi_tiporol
+      t.integer :rpi_tiporol
       t.references :daw_persona, index: true
 
       t.timestamps null: false

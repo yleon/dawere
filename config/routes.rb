@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  root 'index#index'
+
+  match ':controller(/:action(/:id))(.:format)', :via => [:get, :post]
+  
   get 'alfredo/index'
 
   get 'hector/index'
@@ -20,6 +25,7 @@ Rails.application.routes.draw do
   resources :daw_reclamos
 
   devise_for :daw_usuarios
+  
   resources :daw_alianzas
 
   resources :daw_staffs
@@ -106,9 +112,6 @@ Rails.application.routes.draw do
 
   resources :daw_tablas
 
-  # You can have the root of your site routed with "root"
-  root 'index#index'
-  match ':controller(/:action(/:id))(.:format)', :via => [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

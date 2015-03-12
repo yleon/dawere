@@ -3,18 +3,50 @@
 <head>
   <title>Daw_Development</title>
   <%= stylesheet_link_tag "style" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+<% if daw_usuario_signed_in? %>
+
 <body>
+
 <header>
 <h1>Header</h1> 
-<%= link_to "Vianny", vianny_index_path , :class => 'nbar'%> 
-<%= link_to "Alfredo", alfredo_index_path , :class => 'nbar'%> 
-<%= link_to "Hector", hector_index_path , :class => 'nbar'%>
-<%= link_to "Home", root_path , :class => 'nbar'%>
+  <%= link_to "Vianny", vianny_index_path , :class => 'nbar'%> 
+
+  <%= link_to "Alfredo", alfredo_index_path , :class => 'nbar'%> 
+
+  <%= link_to "Hector", hector_index_path , :class => 'nbar'%>
+
+  <%= link_to "Home", root_path , :class => 'nbar'%>
+  
+  <%= link_to 'Logged In [click to logout]', destroy_daw_usuario_session_path, :method => :delete, :class => 'nbar' %>
 </header>
 
+<p>Welcome <%= current_daw_usuario.email %></p>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <%= yield %>
 
 </body>
+
+<% else %>
+
+<body>
+
+<header>
+<h1>Header</h1> 
+  <%= link_to 'Login', new_daw_usuario_session_path, :class => 'nbar' %>
+</header>
+
+  <p>You are not signed in.</p>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+<%= yield %>
+
+</body>
+
+<% end %>
+
 </html>

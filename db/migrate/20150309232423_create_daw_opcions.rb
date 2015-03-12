@@ -6,9 +6,11 @@ class CreateDawOpcions < ActiveRecord::Migration
       t.text :opc_motivo
       t.integer :opc_tipo
       t.references :daw_pregunt, index: true
+      t.references :daw_opcion, index: true
 
       t.timestamps null: false
     end
     add_foreign_key :daw_opcions, :daw_pregunts
+    add_foreign_key :daw_opcions, :daw_opcions
   end
 end

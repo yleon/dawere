@@ -3,7 +3,7 @@ class CreateDawTrabajos < ActiveRecord::Migration
     create_table :daw_trabajos do |t|
       t.string :trab_nombre
       t.string :trab_tipo
-      t.string :trab_telefono
+      t.string :trab_tlf
       t.string :trab_direccion
       t.date :trab_fecha
       t.string :trab_estado

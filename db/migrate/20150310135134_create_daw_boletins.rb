@@ -1,7 +1,7 @@
 class CreateDawBoletins < ActiveRecord::Migration
   def change
     create_table :daw_boletins do |t|
-      t.integer :bltin_nota
+      t.float :bltin_nota
       t.string :bltin_progresoasist
       t.string :bltin_progresoeval
       t.float :bltin_porcentaje

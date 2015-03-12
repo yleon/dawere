@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+#gema para arreglar el problema de type TypeError: Object doesn't support this property or method
+gem 'coffee-script-source', '1.8.0'
 #gema Devise para la gestion de usuarios https://github.com/plataformatec/devise
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

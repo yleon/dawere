@@ -2,7 +2,7 @@ class CreateDawMateAcads < ActiveRecord::Migration
   def change
     create_table :daw_mate_acads do |t|
       t.string :mac_nombre
-      t.text :mac_descrip
+      t.text :mac_descripcion
       t.string :mac_archivo
       t.boolean :mac_disponible
       t.string :mac_estado

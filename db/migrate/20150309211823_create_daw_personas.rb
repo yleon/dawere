@@ -14,6 +14,7 @@ class CreateDawPersonas < ActiveRecord::Migration
       t.string :pers_tlf1
       t.string :pers_tlf2
       t.integer :pers_tipopers
+      t.string :pers_rif
       t.references :daw_lugar, index: true
       t.references :daw_usuario, index: true
 

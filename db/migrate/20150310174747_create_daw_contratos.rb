@@ -5,7 +5,7 @@ class CreateDawContratos < ActiveRecord::Migration
       t.date :cont_fechaini
       t.date :cont_fechafin
       t.string :cont_archivo
-      t.string :cont_descripcion
+      t.text :cont_descripcion
       t.references :daw_prof_asist, index: true
       t.references :daw_curso, index: true
 

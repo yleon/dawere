@@ -4,7 +4,7 @@ class CreateDawProfAsists < ActiveRecord::Migration
       t.string :pa_profesion
       t.integer :pa_tipo
       t.date :pa_fechaingr
-      t.string :pa_biografia
+      t.text :pa_biografia
 
       t.timestamps null: false
     end
