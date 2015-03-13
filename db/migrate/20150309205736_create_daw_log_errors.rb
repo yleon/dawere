@@ -5,7 +5,7 @@ class CreateDawLogErrors < ActiveRecord::Migration
       t.text :loge_descripcion
       t.date :loge_fecha
       t.string :loge_estado
-      t.text :loge_error
+      t.integer :loge_idregistro
       t.text :loge_errorbd
       t.text :loge_argumento1
       t.text :loge_argumento2

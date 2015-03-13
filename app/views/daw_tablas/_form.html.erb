@@ -1,4 +1,5 @@
 <%= form_for(@daw_tabla) do |f| %>
+  <!-- BEGIN BLOQUE DE ERROR-->
   <% if @daw_tabla.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@daw_tabla.errors.count, "error") %> prohibited this daw_tabla from being saved:</h2>
@@ -10,14 +11,42 @@
       </ul>
     </div>
   <% end %>
-
+  <!-- END BLOQUE DE ERROR-->
   <div class="field">
-    <%= f.label :tab_nombre %><br>
+    <%= f.label "Nombre" %><br>
     <%= f.text_field :tab_nombre %>
   </div>
   <div class="field">
-    <%= f.label :tab_nemonico %><br>
+    <%= f.label "Nemónico" %><br>
     <%= f.text_field :tab_nemonico %>
+  </div>
+  <div class="field">
+    <%= f.label "Integer" %><br>
+    <%= f.text_field :tab_integer %>
+  </div>
+  <div class="field">
+    <%= f.label "Char" %><br>
+    <%= f.text_field :tab_char %>
+  </div>
+  <div class="field">
+    <%= f.label "Varchar" %><br>
+    <%= f.text_field :tab_varchar %>
+  </div>
+  <div class="field">
+    <%= f.label "Float" %><br>
+    <%= f.text_field :tab_float %>
+  </div>
+  <div class="field">
+    <%= f.label "Boolean" %><br>
+    <%= f.text_field :tab_boolean %>
+  </div>
+  <div class="field">
+    <%= f.label "Fecha" %><br>
+    <%= f.text_field :tab_fecha %>
+  </div>
+  <div class="field">
+    <%= f.label "Activo" %><br>
+    <%= f.text_field :tab_activo %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -28,7 +28,7 @@ class DawLogTransaccionsController < ApplicationController
 
     respond_to do |format|
       if @daw_log_transaccion.save
-        format.html { redirect_to @daw_log_transaccion, notice: 'Daw log transaccion was successfully created.' }
+        format.html { redirect_to @daw_log_transaccion, notice: 'Nueva registro de transaccion exitosa.' }
         format.json { render :show, status: :created, location: @daw_log_transaccion }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DawLogTransaccionsController < ApplicationController
   def update
     respond_to do |format|
       if @daw_log_transaccion.update(daw_log_transaccion_params)
-        format.html { redirect_to @daw_log_transaccion, notice: 'Daw log transaccion was successfully updated.' }
+        format.html { redirect_to @daw_log_transaccion, notice: 'Modificación log de transacción exitosa' }
         format.json { render :show, status: :ok, location: @daw_log_transaccion }
       else
         format.html { render :edit }

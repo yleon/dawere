@@ -1,12 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Daw Tablas</h1>
-
+<h1>Lista de Tablas</h1>
 <table>
   <thead>
     <tr>
-      <th>Tab nombre</th>
-      <th>Tab nemonico</th>
+      <th>Nombre</th>
+      <th>Nemónico</th>
+      <th>Integer</th>
+      <th>Char</th>
+      <th>Varchar</th>
+      <th>Float</th>
+      <th>Boolean</th>
+      <th>Fecha</th>
+      <th>Activo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,7 +22,14 @@
       <tr>
         <td><%= daw_tabla.tab_nombre %></td>
         <td><%= daw_tabla.tab_nemonico %></td>
-        <td><%= link_to 'Show', daw_tabla %></td>
+        <td><%= daw_tabla.tab_integer %></td>
+        <td><%= daw_tabla.tab_char %></td>
+        <td><%= daw_tabla.tab_varchar %></td>
+        <td><%= daw_tabla.tab_float %></td>
+        <td><%= daw_tabla.tab_boolean %></td>
+        <td><%= daw_tabla.tab_fecha %></td>
+        <td><%= daw_tabla.tab_activo %></td>
+        <td><%= link_to 'Show', daw_tabla %></td> 
         <td><%= link_to 'Edit', edit_daw_tabla_path(daw_tabla) %></td>
         <td><%= link_to 'Destroy', daw_tabla, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -26,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Daw tabla', new_daw_tabla_path %>
+<%= link_to 'Nueva tabla', new_daw_tabla_path %>

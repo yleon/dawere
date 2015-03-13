@@ -2,7 +2,7 @@ class CreateDawCodigos < ActiveRecord::Migration
   def change
     create_table :daw_codigos do |t|
       t.integer :cod_valor
-      t.string :cod_estado
+      t.integer :cod_estado
       t.references :daw_promo, index: true
       t.references :daw_inscripcion, index:true
 

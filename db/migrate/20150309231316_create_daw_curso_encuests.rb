@@ -1,7 +1,7 @@
 class CreateDawCursoEncuests < ActiveRecord::Migration
   def change
     create_table :daw_curso_encuests do |t|
-      t.date :curenc_periodo
+      t.integer :curenc_periodo
       t.references :daw_encuest, index: true
       t.references :daw_curso, index:true
 

@@ -5,7 +5,7 @@ class CreateDawLogTransaccions < ActiveRecord::Migration
       t.text :logt_descripcion
       t.date :logt_fecha
       t.string :logt_estado
-      t.text :logt_transaccion
+      t.integer :logt_idregistro
       t.text :logt_argumento1
       t.text :logt_argumento2
 

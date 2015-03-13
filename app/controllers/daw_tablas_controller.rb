@@ -69,6 +69,6 @@ class DawTablasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daw_tabla_params
-      params.require(:daw_tabla).permit(:tab_nombre, :tab_nemonico)
+      params.require(:daw_tabla).permit(:tab_nombre, :tab_nemonico, :tab_integer, :tab_char, :tab_varchar, :tab_float, :tab_boolean, :tab_fecha, :tab_activo)
     end
 end

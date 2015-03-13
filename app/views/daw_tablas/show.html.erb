@@ -1,14 +1,40 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Tab nombre:</strong>
+  <strong>Nombre:</strong>
   <%= @daw_tabla.tab_nombre %>
 </p>
-
 <p>
-  <strong>Tab nemonico:</strong>
+  <strong>Nemónico:</strong>
   <%= @daw_tabla.tab_nemonico %>
 </p>
-
+<p>
+  <strong>Integer:</strong>
+  <%= @daw_tabla.tab_integer %>
+</p>
+<p>
+  <strong>Char:</strong>
+  <%= @daw_tabla.tab_char %>
+</p>
+<p>
+  <strong>Varchar:</strong>
+  <%= @daw_tabla.tab_varchar %>
+</p>
+<p>
+  <strong>Float:</strong>
+  <%= @daw_tabla.tab_float %>
+</p>
+<p>
+  <strong>Boolean:</strong>
+  <%= @daw_tabla.tab_boolean %>
+</p>
+<p>
+  <strong>Fecha:</strong>
+  <%= @daw_tabla.tab_fecha %>
+</p>
+<p>
+  <strong>Activo:</strong>
+  <%= @daw_tabla.tab_activo %>
+</p>
 <%= link_to 'Edit', edit_daw_tabla_path(@daw_tabla) %> |
 <%= link_to 'Back', daw_tablas_path %>

@@ -6,8 +6,8 @@ class CreateDawHistCambios < ActiveRecord::Migration
       t.date :hcam_fecha
       t.text :hcam_descripcion
       t.string :hcam_campo
-      t.string :hcam_estado
-      t.string :hcam_login
+      t.integer :hcam_estado
+      t.string :hcam_sesion
 
       t.timestamps null: false
     end

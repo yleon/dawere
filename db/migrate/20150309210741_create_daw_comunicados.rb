@@ -4,7 +4,7 @@ class CreateDawComunicados < ActiveRecord::Migration
       t.string :com_nombre
       t.text :com_texto
       t.integer :com_tipocomunicado
-      t.string :com_estado
+      t.integer :com_estado
       t.date :com_fechaenvio
 
       t.timestamps null: false
